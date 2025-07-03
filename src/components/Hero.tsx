@@ -223,10 +223,32 @@ export default function Hero() {
                             </div>
 
                             {/* Visual Column - Load after critical content */}
-                            <div className="order-1 lg:order-2 relative px-2 sm:px-4 lg:px-0 mt-4 lg:mt-0">
-                                <div className="relative max-w-md mx-auto lg:max-w-none">
+                            <div className="order-1 lg:order-2 relative px-2 sm:px-4 lg:px-0 mt-4 lg:mt-0">                                <m.div
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.6, ease: "easeOut" }}
+                                    className="relative max-w-md mx-auto lg:max-w-none"
+                                >
                                     {/* Main Protection Card */}
-                                    <div className="bg-gradient-to-br from-white via-blue-50 to-purple-50 rounded-2xl sm:rounded-3xl md:rounded-[2rem] shadow-xl sm:shadow-2xl p-4 sm:p-6 md:p-8 lg:p-10 border border-white/50 backdrop-blur-lg relative overflow-hidden">
+                                    <m.div
+                                        initial={{ opacity: 0, scale: 0.95 }}
+                                        animate={{
+                                            opacity: 1,
+                                            scale: 1,
+                                            y: enableAnimations ? [0, -10, 0] : 0,
+                                        }}
+                                        transition={{
+                                            opacity: { duration: 0.4 },
+                                            scale: { duration: 0.4 },
+                                            y: enableAnimations ? {
+                                                duration: 4,
+                                                ease: "easeInOut",
+                                                repeat: Infinity,
+                                                delay: 1
+                                            } : { duration: 0 }
+                                        }}
+                                        className="bg-gradient-to-br from-white via-blue-50 to-purple-50 rounded-2xl sm:rounded-3xl md:rounded-[2rem] shadow-xl sm:shadow-2xl p-4 sm:p-6 md:p-8 lg:p-10 border border-white/50 backdrop-blur-lg relative overflow-hidden"
+                                    >
 
                                         <div className="text-center space-y-3 sm:space-y-4 md:space-y-6 relative z-10">
                                             <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-gradient-to-br from-blue-500 via-purple-600 to-blue-500 rounded-xl sm:rounded-2xl md:rounded-3xl shadow-lg sm:shadow-xl">
@@ -263,26 +285,99 @@ export default function Hero() {
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </m.div>
 
-                                    {/* Static Floating Cards - No animation for performance */}
-                                    <div className="absolute -top-2 -left-2 sm:-top-3 sm:-left-3 md:-top-4 md:-left-4 lg:-top-6 lg:-left-6 bg-gradient-to-r from-green-500 to-green-600 text-white p-2 sm:p-3 md:p-4 lg:p-5 rounded-lg sm:rounded-xl md:rounded-2xl shadow-xl sm:shadow-2xl max-w-[140px] sm:max-w-[160px] md:max-w-[200px]">
+                                    {/* Floating Cards with Motion */}
+                                    <m.div
+                                        initial={{ opacity: 0, scale: 0.8 }}
+                                        animate={{
+                                            opacity: 1,
+                                            scale: 1,
+                                            y: enableAnimations ? [0, -8, 0] : 0,
+                                            rotate: enableAnimations ? [0, 2, 0] : 0
+                                        }}
+                                        transition={{
+                                            opacity: { duration: 0.5, delay: 0.2 },
+                                            scale: { duration: 0.5, delay: 0.2 },
+                                            y: enableAnimations ? {
+                                                duration: 5,
+                                                ease: "easeInOut",
+                                                repeat: Infinity,
+                                                delay: 1.5
+                                            } : { duration: 0 },
+                                            rotate: enableAnimations ? {
+                                                duration: 5,
+                                                ease: "easeInOut",
+                                                repeat: Infinity,
+                                                delay: 1.5
+                                            } : { duration: 0 }
+                                        }}
+                                        className="absolute -top-2 -left-2 sm:-top-3 sm:-left-3 md:-top-4 md:-left-4 lg:-top-6 lg:-left-6 bg-gradient-to-r from-green-500 to-green-600 text-white p-2 sm:p-3 md:p-4 lg:p-5 rounded-lg sm:rounded-xl md:rounded-2xl shadow-xl sm:shadow-2xl max-w-[140px] sm:max-w-[160px] md:max-w-[200px]"
+                                    >
                                         <div className="text-xs sm:text-sm font-bold">✅ Instant Approval</div>
                                         <div className="text-sm sm:text-base md:text-lg lg:text-xl font-black">Save $2,400/year</div>
-                                    </div>
+                                    </m.div>
 
-                                    <div className="absolute -bottom-2 -right-2 sm:-bottom-3 sm:-right-3 md:-bottom-4 md:-right-4 lg:-bottom-6 lg:-right-6 bg-gradient-to-r from-purple-500 to-purple-600 text-white p-2 sm:p-3 md:p-4 lg:p-5 rounded-lg sm:rounded-xl md:rounded-2xl shadow-xl sm:shadow-2xl max-w-[140px] sm:max-w-[160px] md:max-w-[200px]">
+                                    <m.div
+                                        initial={{ opacity: 0, scale: 0.8 }}
+                                        animate={{
+                                            opacity: 1,
+                                            scale: 1,
+                                            y: enableAnimations ? [0, 8, 0] : 0,
+                                            rotate: enableAnimations ? [0, -2, 0] : 0
+                                        }}
+                                        transition={{
+                                            opacity: { duration: 0.5, delay: 0.4 },
+                                            scale: { duration: 0.5, delay: 0.4 },
+                                            y: enableAnimations ? {
+                                                duration: 6,
+                                                ease: "easeInOut",
+                                                repeat: Infinity,
+                                                delay: 2
+                                            } : { duration: 0 },
+                                            rotate: enableAnimations ? {
+                                                duration: 6,
+                                                ease: "easeInOut",
+                                                repeat: Infinity,
+                                                delay: 2
+                                            } : { duration: 0 }
+                                        }}
+                                        className="absolute -bottom-2 -right-2 sm:-bottom-3 sm:-right-3 md:-bottom-4 md:-right-4 lg:-bottom-6 lg:-right-6 bg-gradient-to-r from-purple-500 to-purple-600 text-white p-2 sm:p-3 md:p-4 lg:p-5 rounded-lg sm:rounded-xl md:rounded-2xl shadow-xl sm:shadow-2xl max-w-[140px] sm:max-w-[160px] md:max-w-[200px]"
+                                    >
                                         <div className="text-xs sm:text-sm font-bold">🚨 Emergency Claims</div>
                                         <div className="text-sm sm:text-base md:text-lg lg:text-xl font-black">24/7 Hotline</div>
-                                    </div>
+                                    </m.div>
 
-                                    <div className="absolute top-1/2 -right-4 sm:-right-6 md:-right-8 lg:-right-12 bg-gradient-to-r from-orange-500 to-red-500 text-white p-2 sm:p-3 md:p-4 rounded-lg sm:rounded-xl shadow-lg sm:shadow-xl">
+                                    <m.div
+                                        initial={{ opacity: 0, scale: 0.8 }}
+                                        animate={{
+                                            opacity: 1,
+                                            scale: enableAnimations ? [1, 1.05, 1] : 1,
+                                            x: enableAnimations ? [0, 5, 0] : 0
+                                        }}
+                                        transition={{
+                                            opacity: { duration: 0.5, delay: 0.6 },
+                                            scale: enableAnimations ? {
+                                                duration: 4.5,
+                                                ease: "easeInOut",
+                                                repeat: Infinity,
+                                                delay: 1.2
+                                            } : { duration: 0.5, delay: 0.6 },
+                                            x: enableAnimations ? {
+                                                duration: 4.5,
+                                                ease: "easeInOut",
+                                                repeat: Infinity,
+                                                delay: 1.2
+                                            } : { duration: 0 }
+                                        }}
+                                        className="absolute top-1/2 -right-4 sm:-right-6 md:-right-8 lg:-right-12 bg-gradient-to-r from-orange-500 to-red-500 text-white p-2 sm:p-3 md:p-4 rounded-lg sm:rounded-xl shadow-lg sm:shadow-xl"
+                                    >
                                         <div className="text-center">
                                             <TrendingUp className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 lg:h-8 lg:w-8 mx-auto mb-1" />
                                             <div className="text-xs sm:text-sm font-black whitespace-nowrap">Claims Up 300%</div>
                                         </div>
-                                    </div>
-                                </div>
+                                    </m.div>
+                                </m.div>
                             </div>
                         </div>
                     </div>
@@ -301,6 +396,6 @@ export default function Hero() {
                     </svg>
                 </div>
             </section>
-        </LazyMotion>
+        </LazyMotion >
     )
 } 
