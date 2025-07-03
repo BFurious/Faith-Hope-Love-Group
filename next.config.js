@@ -27,6 +27,13 @@ const nextConfig = {
 
     // Bundle optimization
     webpack: (config, { isServer }) => {
+        // Ensure proper module resolution
+        config.resolve.extensions = ['.ts', '.tsx', '.js', '.jsx', '.json']
+        config.resolve.fallback = {
+            ...config.resolve.fallback,
+            fs: false,
+        }
+
         // Optimize bundle splitting
         if (!isServer) {
             config.optimization.splitChunks = {
