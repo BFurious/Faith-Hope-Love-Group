@@ -8,6 +8,7 @@ import {
     Contact,
     Footer
 } from '@/components'
+import Disclaimer from '@/components/Disclaimer'
 
 export default function Home() {
     return (

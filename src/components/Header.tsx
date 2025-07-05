@@ -4,19 +4,22 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Menu, X, Phone, Mail, Shield } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const navigation = [
-    { name: 'Home', href: '#home' },
-    { name: 'Services', href: '#services' },
-    { name: 'About', href: '#about' },
-    { name: 'Testimonials', href: '#testimonials' },
-    { name: 'FAQ', href: '#faq' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/' },
+    { name: 'Services', href: '/services' },
+    { name: 'About', href: '/about' },
+    { name: 'Testimonials', href: '/testimonials' },
+    { name: 'FAQ', href: '/faq' },
+    { name: 'Contact', href: '/contact' },
 ]
 
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false)
     const [isScrolled, setIsScrolled] = useState(false)
+    const pathname = usePathname()
 
     useEffect(() => {
         const handleScroll = () => {
@@ -35,11 +38,11 @@ export default function Header() {
                         <div className="flex items-center space-x-6">
                             <div className="flex items-center space-x-2">
                                 <Phone className="h-4 w-4" />
-                                <span>(555) 123-HOPE</span>
+                                <span>770-882-4899</span>
                             </div>
                             <div className="flex items-center space-x-2">
                                 <Mail className="h-4 w-4" />
-                                <span>info@hopefaithlovegroup.com</span>
+                                <span>faithopelovegroup@gmail.com</span>
                             </div>
                         </div>
                         <div className="text-sm">
@@ -70,18 +73,20 @@ export default function Header() {
                             transition={{ duration: 0.6, delay: 0.2 }}
                             className="flex items-center space-x-3"
                         >
-                            <div className="relative">
-                                <Shield className="h-10 w-10 text-primary-600" />
-                                <div className="absolute inset-0 bg-primary-600/20 rounded-lg blur-lg" />
-                            </div>
-                            <div>
-                                <h1 className="text-2xl font-bold gradient-text">
-                                    Hope Faith & Love Group
-                                </h1>
-                                <p className="text-xs text-gray-600 font-medium">
-                                    Insurance & Protection
-                                </p>
-                            </div>
+                            <Link href="/" className="flex items-center space-x-3">
+                                <div className="relative">
+                                    <Shield className="h-10 w-10 text-primary-600" />
+                                    <div className="absolute inset-0 bg-primary-600/20 rounded-lg blur-lg" />
+                                </div>
+                                <div>
+                                    <h1 className="text-2xl font-bold gradient-text">
+                                        Hope Faith & Love Group
+                                    </h1>
+                                    <p className="text-xs text-gray-600 font-medium">
+                                        Insurance & Protection
+                                    </p>
+                                </div>
+                            </Link>
                         </motion.div>
 
                         {/* Desktop Navigation */}
@@ -92,17 +97,28 @@ export default function Header() {
                             className="hidden lg:flex items-center space-x-8"
                         >
                             {navigation.map((item, index) => (
-                                <motion.a
+                                <motion.div
                                     key={item.name}
-                                    href={item.href}
                                     initial={{ opacity: 0, y: -10 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.3, delay: 0.1 * index }}
-                                    className="relative text-gray-700 hover:text-primary-600 font-medium transition-colors duration-300 group"
                                 >
-                                    {item.name}
-                                    <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full" />
-                                </motion.a>
+                                    <Link
+                                        href={item.href}
+                                        className={cn(
+                                            "relative font-medium transition-colors duration-300 group",
+                                            pathname === item.href
+                                                ? "text-primary-600"
+                                                : "text-gray-700 hover:text-primary-600"
+                                        )}
+                                    >
+                                        {item.name}
+                                        <span className={cn(
+                                            "absolute left-0 bottom-0 h-0.5 bg-primary-600 transition-all duration-300",
+                                            pathname === item.href ? "w-full" : "w-0 group-hover:w-full"
+                                        )} />
+                                    </Link>
+                                </motion.div>
                             ))}
                         </motion.div>
 
@@ -113,12 +129,12 @@ export default function Header() {
                             transition={{ duration: 0.6, delay: 0.6 }}
                             className="hidden lg:flex items-center space-x-4"
                         >
-                            <a
-                                href="#contact"
+                            <Link
+                                href="/contact"
                                 className="btn-primary"
                             >
                                 Get Free Quote
-                            </a>
+                            </Link>
                         </motion.div>
 
                         {/* Mobile menu button */}
@@ -143,23 +159,28 @@ export default function Header() {
                     <div className="container-custom py-4">
                         <div className="space-y-4">
                             {navigation.map((item) => (
-                                <a
+                                <Link
                                     key={item.name}
                                     href={item.href}
                                     onClick={() => setIsOpen(false)}
-                                    className="block text-gray-700 hover:text-primary-600 font-medium transition-colors duration-300"
+                                    className={cn(
+                                        "block font-medium transition-colors duration-300",
+                                        pathname === item.href
+                                            ? "text-primary-600"
+                                            : "text-gray-700 hover:text-primary-600"
+                                    )}
                                 >
                                     {item.name}
-                                </a>
+                                </Link>
                             ))}
                             <div className="pt-4 border-t">
-                                <a
-                                    href="#contact"
+                                <Link
+                                    href="/contact"
                                     onClick={() => setIsOpen(false)}
                                     className="btn-primary block text-center"
                                 >
                                     Get Free Quote
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>

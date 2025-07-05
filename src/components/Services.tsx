@@ -13,6 +13,7 @@ import {
     Check
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import Link from 'next/link'
 
 const services = [
     {
@@ -214,19 +215,21 @@ export default function Services() {
                             Our expert agents will work with you to create a personalized insurance package
                             that fits your unique needs and budget.
                         </p>
-                        <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
-                            <a
-                                href="#contact"
-                                className="bg-white text-primary-600 hover:bg-gray-100 font-semibold py-2 md:py-3 px-6 md:px-8 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm md:text-base"
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                            <Link
+                                href="/contact"
+                                className="btn-primary group"
                             >
-                                Get Custom Quote
-                            </a>
-                            <a
-                                href="tel:555-123-HOPE"
-                                className="border-2 border-white text-white hover:bg-white hover:text-primary-600 font-semibold py-2 md:py-3 px-6 md:px-8 rounded-lg transition-all duration-300 text-sm md:text-base"
+                                Get Free Quote
+                                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                            </Link>
+                            <Link
+                                href="/services"
+                                className="btn-secondary group"
                             >
-                                Call Now: (555) 123-HOPE
-                            </a>
+                                View All Services
+                                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                            </Link>
                         </div>
                     </div>
                 </motion.div>

@@ -1,10 +1,11 @@
 'use client'
 
 import { motion, LazyMotion, domAnimation, m } from 'framer-motion'
-import { Shield, Star, Users, Award, ChevronRight, Play, Check, Zap, Heart, TrendingUp } from 'lucide-react'
+import { Shield, Star, Users, Award, ChevronRight, Play, Check, Zap, Heart, TrendingUp, ArrowRight } from 'lucide-react'
 import { useState, useEffect, Suspense, lazy } from 'react'
 import Image from 'next/image'
 import LazyAnimations from './LazyAnimations'
+import Link from 'next/link'
 const stats = [
     { icon: Users, value: '50K+', label: 'Families Protected', description: 'Sleep peacefully' },
     { icon: Shield, value: '99.9%', label: 'Claims Approved', description: 'We say YES' },
@@ -142,28 +143,21 @@ export default function Hero() {
                                 </div>
 
                                 {/* CTA Buttons - Critical conversion elements */}
-                                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center lg:justify-start max-w-lg mx-auto lg:max-w-none">
-                                    <a
-                                        href="#contact"
-                                        className="group bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white font-black py-3 sm:py-4 md:py-5 px-6 sm:px-8 md:px-12 rounded-xl sm:rounded-2xl transition-all duration-300 shadow-xl sm:shadow-2xl text-base sm:text-lg md:text-xl relative overflow-hidden touch-manipulation transform hover:scale-105"
+                                <div className="flex flex-col sm:flex-row gap-4">
+                                    <Link
+                                        href="/contact"
+                                        className="btn-primary group"
                                     >
-                                        <div className="relative flex items-center justify-center">
-                                            <span className="mr-2">🚨</span>
-                                            <span className="hidden sm:inline">GET PROTECTED NOW (FREE)</span>
-                                            <span className="sm:hidden">GET PROTECTED (FREE)</span>
-                                            <ChevronRight className="ml-1 sm:ml-2 h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 transition-transform group-hover:translate-x-1 flex-shrink-0" />
-                                        </div>
-                                        <div className="text-xs sm:text-sm mt-1 opacity-90 text-center">⚡ Instant Quote • No Credit Check</div>
-                                    </a>
-
-                                    <button className="group bg-white border-2 sm:border-4 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-black py-3 sm:py-4 md:py-5 px-6 sm:px-8 md:px-12 rounded-xl sm:rounded-2xl transition-all duration-300 shadow-lg sm:shadow-xl text-base sm:text-lg md:text-xl touch-manipulation transform hover:scale-105">
-                                        <div className="flex items-center justify-center">
-                                            <Play className="mr-1 sm:mr-2 h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 flex-shrink-0" />
-                                            <span className="hidden sm:inline">See Real Claims Paid</span>
-                                            <span className="sm:hidden">Real Claims</span>
-                                        </div>
-                                        <div className="text-xs sm:text-sm mt-1 opacity-70 text-center">🎥 2-min success stories</div>
-                                    </button>
+                                        Get Free Quote
+                                        <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                                    </Link>
+                                    <Link
+                                        href="/services"
+                                        className="btn-secondary group"
+                                    >
+                                        Explore Services
+                                        <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                                    </Link>
                                 </div>
 
                                 {/* Stats Grid - Important but not critical */}
@@ -224,160 +218,160 @@ export default function Hero() {
 
                             {/* Visual Column - Load after critical content */}
                             <div className="order-1 lg:order-2 relative px-2 sm:px-4 lg:px-0 mt-4 lg:mt-0">                                <m.div
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.6, ease: "easeOut" }}
-                                    className="relative max-w-md mx-auto lg:max-w-none"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, ease: "easeOut" }}
+                                className="relative max-w-md mx-auto lg:max-w-none"
+                            >
+                                {/* Main Protection Card */}
+                                <m.div
+                                    initial={{ opacity: 0, scale: 0.95 }}
+                                    animate={{
+                                        opacity: 1,
+                                        scale: 1,
+                                        y: enableAnimations ? [0, -10, 0] : 0,
+                                    }}
+                                    transition={{
+                                        opacity: { duration: 0.4 },
+                                        scale: { duration: 0.4 },
+                                        y: enableAnimations ? {
+                                            duration: 4,
+                                            ease: "easeInOut",
+                                            repeat: Infinity,
+                                            delay: 1
+                                        } : { duration: 0 }
+                                    }}
+                                    className="bg-gradient-to-br from-white via-blue-50 to-purple-50 rounded-2xl sm:rounded-3xl md:rounded-[2rem] shadow-xl sm:shadow-2xl p-4 sm:p-6 md:p-8 lg:p-10 border border-white/50 backdrop-blur-lg relative overflow-hidden"
                                 >
-                                    {/* Main Protection Card */}
-                                    <m.div
-                                        initial={{ opacity: 0, scale: 0.95 }}
-                                        animate={{
-                                            opacity: 1,
-                                            scale: 1,
-                                            y: enableAnimations ? [0, -10, 0] : 0,
-                                        }}
-                                        transition={{
-                                            opacity: { duration: 0.4 },
-                                            scale: { duration: 0.4 },
-                                            y: enableAnimations ? {
-                                                duration: 4,
-                                                ease: "easeInOut",
-                                                repeat: Infinity,
-                                                delay: 1
-                                            } : { duration: 0 }
-                                        }}
-                                        className="bg-gradient-to-br from-white via-blue-50 to-purple-50 rounded-2xl sm:rounded-3xl md:rounded-[2rem] shadow-xl sm:shadow-2xl p-4 sm:p-6 md:p-8 lg:p-10 border border-white/50 backdrop-blur-lg relative overflow-hidden"
-                                    >
 
-                                        <div className="text-center space-y-3 sm:space-y-4 md:space-y-6 relative z-10">
-                                            <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-gradient-to-br from-blue-500 via-purple-600 to-blue-500 rounded-xl sm:rounded-2xl md:rounded-3xl shadow-lg sm:shadow-xl">
-                                                <Shield className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-white" />
-                                            </div>
+                                    <div className="text-center space-y-3 sm:space-y-4 md:space-y-6 relative z-10">
+                                        <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-gradient-to-br from-blue-500 via-purple-600 to-blue-500 rounded-xl sm:rounded-2xl md:rounded-3xl shadow-lg sm:shadow-xl">
+                                            <Shield className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-white" />
+                                        </div>
 
-                                            <div>
-                                                <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-gray-900 mb-1 sm:mb-2 leading-tight">
-                                                    🛡️ TOTAL LIFE PROTECTION
-                                                </h3>
-                                                <p className="text-gray-600 text-sm sm:text-base md:text-lg font-semibold">
-                                                    Auto • Home • Life • Health • Business
-                                                </p>
-                                            </div>
+                                        <div>
+                                            <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-gray-900 mb-1 sm:mb-2 leading-tight">
+                                                🛡️ TOTAL LIFE PROTECTION
+                                            </h3>
+                                            <p className="text-gray-600 text-sm sm:text-base md:text-lg font-semibold">
+                                                Auto • Home • Life • Health • Business
+                                            </p>
+                                        </div>
 
-                                            <div className="flex items-center justify-center space-x-0.5 sm:space-x-1">
-                                                {[...Array(5)].map((_, i) => (
-                                                    <Star key={i} className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 lg:h-7 lg:w-7 text-yellow-500 fill-current" />
-                                                ))}
-                                                <span className="ml-2 sm:ml-3 text-gray-700 font-black text-sm sm:text-base md:text-lg lg:text-xl">4.9/5</span>
-                                            </div>
+                                        <div className="flex items-center justify-center space-x-0.5 sm:space-x-1">
+                                            {[...Array(5)].map((_, i) => (
+                                                <Star key={i} className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 lg:h-7 lg:w-7 text-yellow-500 fill-current" />
+                                            ))}
+                                            <span className="ml-2 sm:ml-3 text-gray-700 font-black text-sm sm:text-base md:text-lg lg:text-xl">4.9/5</span>
+                                        </div>
 
-                                            {/* Live Claims Counter */}
-                                            <div className="bg-green-100 border-2 border-green-300 rounded-lg sm:rounded-xl p-3 sm:p-4">
-                                                <div className="text-center">
-                                                    <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-green-600 mb-1">
-                                                        ${(customerCount * 47).toLocaleString()}
-                                                    </div>
-                                                    <div className="text-green-700 font-bold text-xs sm:text-sm">Paid Out This Month</div>
-                                                    <div className="flex items-center justify-center mt-1 sm:mt-2">
-                                                        <Heart className="h-3 w-3 sm:h-4 sm:w-4 text-red-500 animate-pulse mr-1" />
-                                                        <span className="text-xs text-green-600">Lives Changed Forever</span>
-                                                    </div>
+                                        {/* Live Claims Counter */}
+                                        <div className="bg-green-100 border-2 border-green-300 rounded-lg sm:rounded-xl p-3 sm:p-4">
+                                            <div className="text-center">
+                                                <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-green-600 mb-1">
+                                                    ${(customerCount * 47).toLocaleString()}
+                                                </div>
+                                                <div className="text-green-700 font-bold text-xs sm:text-sm">Paid Out This Month</div>
+                                                <div className="flex items-center justify-center mt-1 sm:mt-2">
+                                                    <Heart className="h-3 w-3 sm:h-4 sm:w-4 text-red-500 animate-pulse mr-1" />
+                                                    <span className="text-xs text-green-600">Lives Changed Forever</span>
                                                 </div>
                                             </div>
                                         </div>
-                                    </m.div>
-
-                                    {/* Floating Cards with Motion */}
-                                    <m.div
-                                        initial={{ opacity: 0, scale: 0.8 }}
-                                        animate={{
-                                            opacity: 1,
-                                            scale: 1,
-                                            y: enableAnimations ? [0, -8, 0] : 0,
-                                            rotate: enableAnimations ? [0, 2, 0] : 0
-                                        }}
-                                        transition={{
-                                            opacity: { duration: 0.5, delay: 0.2 },
-                                            scale: { duration: 0.5, delay: 0.2 },
-                                            y: enableAnimations ? {
-                                                duration: 5,
-                                                ease: "easeInOut",
-                                                repeat: Infinity,
-                                                delay: 1.5
-                                            } : { duration: 0 },
-                                            rotate: enableAnimations ? {
-                                                duration: 5,
-                                                ease: "easeInOut",
-                                                repeat: Infinity,
-                                                delay: 1.5
-                                            } : { duration: 0 }
-                                        }}
-                                        className="absolute -top-2 -left-2 sm:-top-3 sm:-left-3 md:-top-4 md:-left-4 lg:-top-6 lg:-left-6 bg-gradient-to-r from-green-500 to-green-600 text-white p-2 sm:p-3 md:p-4 lg:p-5 rounded-lg sm:rounded-xl md:rounded-2xl shadow-xl sm:shadow-2xl max-w-[140px] sm:max-w-[160px] md:max-w-[200px]"
-                                    >
-                                        <div className="text-xs sm:text-sm font-bold">✅ Instant Approval</div>
-                                        <div className="text-sm sm:text-base md:text-lg lg:text-xl font-black">Save $2,400/year</div>
-                                    </m.div>
-
-                                    <m.div
-                                        initial={{ opacity: 0, scale: 0.8 }}
-                                        animate={{
-                                            opacity: 1,
-                                            scale: 1,
-                                            y: enableAnimations ? [0, 8, 0] : 0,
-                                            rotate: enableAnimations ? [0, -2, 0] : 0
-                                        }}
-                                        transition={{
-                                            opacity: { duration: 0.5, delay: 0.4 },
-                                            scale: { duration: 0.5, delay: 0.4 },
-                                            y: enableAnimations ? {
-                                                duration: 6,
-                                                ease: "easeInOut",
-                                                repeat: Infinity,
-                                                delay: 2
-                                            } : { duration: 0 },
-                                            rotate: enableAnimations ? {
-                                                duration: 6,
-                                                ease: "easeInOut",
-                                                repeat: Infinity,
-                                                delay: 2
-                                            } : { duration: 0 }
-                                        }}
-                                        className="absolute -bottom-2 -right-2 sm:-bottom-3 sm:-right-3 md:-bottom-4 md:-right-4 lg:-bottom-6 lg:-right-6 bg-gradient-to-r from-purple-500 to-purple-600 text-white p-2 sm:p-3 md:p-4 lg:p-5 rounded-lg sm:rounded-xl md:rounded-2xl shadow-xl sm:shadow-2xl max-w-[140px] sm:max-w-[160px] md:max-w-[200px]"
-                                    >
-                                        <div className="text-xs sm:text-sm font-bold">🚨 Emergency Claims</div>
-                                        <div className="text-sm sm:text-base md:text-lg lg:text-xl font-black">24/7 Hotline</div>
-                                    </m.div>
-
-                                    <m.div
-                                        initial={{ opacity: 0, scale: 0.8 }}
-                                        animate={{
-                                            opacity: 1,
-                                            scale: enableAnimations ? [1, 1.05, 1] : 1,
-                                            x: enableAnimations ? [0, 5, 0] : 0
-                                        }}
-                                        transition={{
-                                            opacity: { duration: 0.5, delay: 0.6 },
-                                            scale: enableAnimations ? {
-                                                duration: 4.5,
-                                                ease: "easeInOut",
-                                                repeat: Infinity,
-                                                delay: 1.2
-                                            } : { duration: 0.5, delay: 0.6 },
-                                            x: enableAnimations ? {
-                                                duration: 4.5,
-                                                ease: "easeInOut",
-                                                repeat: Infinity,
-                                                delay: 1.2
-                                            } : { duration: 0 }
-                                        }}
-                                        className="absolute top-1/2 -right-4 sm:-right-6 md:-right-8 lg:-right-12 bg-gradient-to-r from-orange-500 to-red-500 text-white p-2 sm:p-3 md:p-4 rounded-lg sm:rounded-xl shadow-lg sm:shadow-xl"
-                                    >
-                                        <div className="text-center">
-                                            <TrendingUp className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 lg:h-8 lg:w-8 mx-auto mb-1" />
-                                            <div className="text-xs sm:text-sm font-black whitespace-nowrap">Claims Up 300%</div>
-                                        </div>
-                                    </m.div>
+                                    </div>
                                 </m.div>
+
+                                {/* Floating Cards with Motion */}
+                                <m.div
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    animate={{
+                                        opacity: 1,
+                                        scale: 1,
+                                        y: enableAnimations ? [0, -8, 0] : 0,
+                                        rotate: enableAnimations ? [0, 2, 0] : 0
+                                    }}
+                                    transition={{
+                                        opacity: { duration: 0.5, delay: 0.2 },
+                                        scale: { duration: 0.5, delay: 0.2 },
+                                        y: enableAnimations ? {
+                                            duration: 5,
+                                            ease: "easeInOut",
+                                            repeat: Infinity,
+                                            delay: 1.5
+                                        } : { duration: 0 },
+                                        rotate: enableAnimations ? {
+                                            duration: 5,
+                                            ease: "easeInOut",
+                                            repeat: Infinity,
+                                            delay: 1.5
+                                        } : { duration: 0 }
+                                    }}
+                                    className="absolute -top-2 -left-2 sm:-top-3 sm:-left-3 md:-top-4 md:-left-4 lg:-top-6 lg:-left-6 bg-gradient-to-r from-green-500 to-green-600 text-white p-2 sm:p-3 md:p-4 lg:p-5 rounded-lg sm:rounded-xl md:rounded-2xl shadow-xl sm:shadow-2xl max-w-[140px] sm:max-w-[160px] md:max-w-[200px]"
+                                >
+                                    <div className="text-xs sm:text-sm font-bold">✅ Instant Approval</div>
+                                    <div className="text-sm sm:text-base md:text-lg lg:text-xl font-black">Save $2,400/year</div>
+                                </m.div>
+
+                                <m.div
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    animate={{
+                                        opacity: 1,
+                                        scale: 1,
+                                        y: enableAnimations ? [0, 8, 0] : 0,
+                                        rotate: enableAnimations ? [0, -2, 0] : 0
+                                    }}
+                                    transition={{
+                                        opacity: { duration: 0.5, delay: 0.4 },
+                                        scale: { duration: 0.5, delay: 0.4 },
+                                        y: enableAnimations ? {
+                                            duration: 6,
+                                            ease: "easeInOut",
+                                            repeat: Infinity,
+                                            delay: 2
+                                        } : { duration: 0 },
+                                        rotate: enableAnimations ? {
+                                            duration: 6,
+                                            ease: "easeInOut",
+                                            repeat: Infinity,
+                                            delay: 2
+                                        } : { duration: 0 }
+                                    }}
+                                    className="absolute -bottom-2 -right-2 sm:-bottom-3 sm:-right-3 md:-bottom-4 md:-right-4 lg:-bottom-6 lg:-right-6 bg-gradient-to-r from-purple-500 to-purple-600 text-white p-2 sm:p-3 md:p-4 lg:p-5 rounded-lg sm:rounded-xl md:rounded-2xl shadow-xl sm:shadow-2xl max-w-[140px] sm:max-w-[160px] md:max-w-[200px]"
+                                >
+                                    <div className="text-xs sm:text-sm font-bold">🚨 Emergency Claims</div>
+                                    <div className="text-sm sm:text-base md:text-lg lg:text-xl font-black">24/7 Hotline</div>
+                                </m.div>
+
+                                <m.div
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    animate={{
+                                        opacity: 1,
+                                        scale: enableAnimations ? [1, 1.05, 1] : 1,
+                                        x: enableAnimations ? [0, 5, 0] : 0
+                                    }}
+                                    transition={{
+                                        opacity: { duration: 0.5, delay: 0.6 },
+                                        scale: enableAnimations ? {
+                                            duration: 4.5,
+                                            ease: "easeInOut",
+                                            repeat: Infinity,
+                                            delay: 1.2
+                                        } : { duration: 0.5, delay: 0.6 },
+                                        x: enableAnimations ? {
+                                            duration: 4.5,
+                                            ease: "easeInOut",
+                                            repeat: Infinity,
+                                            delay: 1.2
+                                        } : { duration: 0 }
+                                    }}
+                                    className="absolute top-1/2 -right-4 sm:-right-6 md:-right-8 lg:-right-12 bg-gradient-to-r from-orange-500 to-red-500 text-white p-2 sm:p-3 md:p-4 rounded-lg sm:rounded-xl shadow-lg sm:shadow-xl"
+                                >
+                                    <div className="text-center">
+                                        <TrendingUp className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 lg:h-8 lg:w-8 mx-auto mb-1" />
+                                        <div className="text-xs sm:text-sm font-black whitespace-nowrap">Claims Up 300%</div>
+                                    </div>
+                                </m.div>
+                            </m.div>
                             </div>
                         </div>
                     </div>

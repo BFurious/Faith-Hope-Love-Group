@@ -2,8 +2,9 @@
 
 import { motion, AnimatePresence } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Star, Quote, ChevronLeft, ChevronRight, Shield, Award, Sparkles } from 'lucide-react'
+import { Star, Quote, ChevronLeft, ChevronRight, Shield, Award, Sparkles, ArrowRight } from 'lucide-react'
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 
 const testimonials = [
     {
@@ -295,8 +296,8 @@ export default function Testimonials() {
                                         setIsAutoPlaying(false)
                                     }}
                                     className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex
-                                            ? 'bg-blue-600 w-8'
-                                            : 'bg-gray-300 hover:bg-blue-400'
+                                        ? 'bg-blue-600 w-8'
+                                        : 'bg-gray-300 hover:bg-blue-400'
                                         }`}
                                 />
                             ))}
@@ -326,19 +327,21 @@ export default function Testimonials() {
                             Get your free quote now and join the family of customers who sleep soundly at night.
                         </p>
 
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-                            <a
-                                href="#contact"
-                                className="bg-white text-blue-600 hover:bg-gray-100 font-black py-4 px-8 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-2xl text-lg"
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                            <Link
+                                href="/contact"
+                                className="btn-primary group"
                             >
-                                🚀 Get FREE Quote (30 seconds)
-                            </a>
-                            <a
-                                href="tel:555-123-HOPE"
-                                className="border-2 border-white text-white hover:bg-white hover:text-blue-600 font-black py-4 px-8 rounded-2xl transition-all duration-300 text-lg"
+                                Get Free Quote
+                                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                            </Link>
+                            <Link
+                                href="/testimonials"
+                                className="btn-secondary group"
                             >
-                                📞 Call: (555) 123-HOPE
-                            </a>
+                                Read More Stories
+                                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                            </Link>
                         </div>
 
                         <div className="text-blue-100 text-lg">

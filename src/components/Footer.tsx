@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 import {
     Shield,
     Phone,
@@ -19,34 +20,34 @@ const footerSections = [
     {
         title: 'Services',
         links: [
-            { name: 'Auto Insurance', href: '#services' },
-            { name: 'Home Insurance', href: '#services' },
-            { name: 'Life Insurance', href: '#services' },
-            { name: 'Health Insurance', href: '#services' },
-            { name: 'Business Insurance', href: '#services' },
-            { name: 'Travel Insurance', href: '#services' },
+            { name: 'Auto Insurance', href: '/services' },
+            { name: 'Home Insurance', href: '/services' },
+            { name: 'Life Insurance', href: '/services' },
+            { name: 'Health Insurance', href: '/services' },
+            { name: 'Business Insurance', href: '/services' },
+            { name: 'Travel Insurance', href: '/services' },
         ]
     },
     {
         title: 'Company',
         links: [
-            { name: 'About Us', href: '#about' },
-            { name: 'Our Story', href: '#about' },
-            { name: 'Careers', href: '#contact' },
-            { name: 'News & Updates', href: '#contact' },
-            { name: 'Community', href: '#testimonials' },
-            { name: 'Partnership', href: '#contact' },
+            { name: 'About Us', href: '/about' },
+            { name: 'Our Story', href: '/about' },
+            { name: 'Careers', href: '/contact' },
+            { name: 'News & Updates', href: '/contact' },
+            { name: 'Community', href: '/testimonials' },
+            { name: 'Partnership', href: '/contact' },
         ]
     },
     {
         title: 'Support',
         links: [
-            { name: 'Help Center', href: '#faq' },
-            { name: 'Contact Us', href: '#contact' },
-            { name: 'File a Claim', href: '#contact' },
-            { name: 'Policy Documents', href: '#contact' },
-            { name: 'FAQ', href: '#faq' },
-            { name: 'Emergency Claims', href: '#contact' },
+            { name: 'Help Center', href: '/faq' },
+            { name: 'Contact Us', href: '/contact' },
+            { name: 'File a Claim', href: '/contact' },
+            { name: 'Policy Documents', href: '/contact' },
+            { name: 'FAQ', href: '/faq' },
+            { name: 'Emergency Claims', href: '/contact' },
         ]
     }
 ]
@@ -71,7 +72,7 @@ export default function Footer() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-8 lg:mb-12">
                         {/* Brand Section */}
                         <div className="space-y-4 md:space-y-6 px-4 lg:px-0">
-                            <div className="flex items-center space-x-2 md:space-x-3">
+                            <Link href="/" className="flex items-center space-x-2 md:space-x-3">
                                 <div className="relative">
                                     <Shield className="h-8 w-8 md:h-10 md:w-10 text-primary-400" />
                                     <div className="absolute inset-0 bg-primary-400/20 rounded-lg blur-lg" />
@@ -84,7 +85,7 @@ export default function Footer() {
                                         Insurance & Protection
                                     </p>
                                 </div>
-                            </div>
+                            </Link>
 
                             <p className="text-gray-300 leading-relaxed text-sm md:text-base max-w-md">
                                 For over 25 years, we've been protecting families and businesses with comprehensive
@@ -95,17 +96,17 @@ export default function Footer() {
                             <div className="space-y-2 md:space-y-3">
                                 <div className="flex items-center space-x-2 md:space-x-3 text-gray-300">
                                     <Phone className="h-4 w-4 md:h-5 md:w-5 text-primary-400 flex-shrink-0" />
-                                    <span className="text-sm md:text-base">(555) 123-HOPE</span>
+                                    <span className="text-sm md:text-base">770-882-4899</span>
                                 </div>
                                 <div className="flex items-center space-x-2 md:space-x-3 text-gray-300">
                                     <Mail className="h-4 w-4 md:h-5 md:w-5 text-primary-400 flex-shrink-0" />
-                                    <span className="text-sm md:text-base">info@hopefaithlovegroup.com</span>
+                                    <span className="text-sm md:text-base">faithopelovegroup@gmail.com</span>
                                 </div>
                                 <div className="flex items-start space-x-2 md:space-x-3 text-gray-300">
                                     <MapPin className="h-4 w-4 md:h-5 md:w-5 text-primary-400 flex-shrink-0 mt-0.5" />
                                     <span className="text-sm md:text-base">
-                                        123 Main Street, Suite 200<br />
-                                        Anytown, ST 12345
+                                        Georgia, United States<br />
+                                        Licensed to serve Georgia residents
                                     </span>
                                 </div>
                             </div>
@@ -121,12 +122,12 @@ export default function Footer() {
                                     <ul className="space-y-2">
                                         {section.links.map((link) => (
                                             <li key={link.name}>
-                                                <a
+                                                <Link
                                                     href={link.href}
                                                     className="text-gray-400 hover:text-primary-400 transition-colors duration-300 text-xs md:text-sm"
                                                 >
                                                     {link.name}
-                                                </a>
+                                                </Link>
                                             </li>
                                         ))}
                                     </ul>
@@ -169,15 +170,18 @@ export default function Footer() {
                                 <span className="hidden sm:inline">All rights reserved.</span>
                             </div>
                             <div className="flex items-center space-x-4">
-                                <a href="#" className="hover:text-primary-400 transition-colors duration-300">
+                                <Link href="/disclaimer" className="hover:text-primary-400 transition-colors duration-300">
+                                    Legal Disclaimer
+                                </Link>
+                                <Link href="/terms" className="hover:text-primary-400 transition-colors duration-300">
+                                    Terms of Use
+                                </Link>
+                                <Link href="#" className="hover:text-primary-400 transition-colors duration-300">
                                     Privacy Policy
-                                </a>
-                                <a href="#" className="hover:text-primary-400 transition-colors duration-300">
-                                    Terms of Service
-                                </a>
-                                <a href="#" className="hover:text-primary-400 transition-colors duration-300">
+                                </Link>
+                                <Link href="#" className="hover:text-primary-400 transition-colors duration-300">
                                     Cookie Policy
-                                </a>
+                                </Link>
                             </div>
                         </div>
 

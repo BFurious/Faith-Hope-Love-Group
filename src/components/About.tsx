@@ -222,23 +222,13 @@ export default function About() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                     transition={{ duration: 0.6, delay: 1 }}
-                    className="text-center bg-primary-50 rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-12 mx-4 lg:mx-0"
+                    className="text-center"
                 >
-                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3 md:mb-4">
-                        Ready to Join Our Family?
-                    </h3>
-                    <p className="text-lg md:text-xl text-gray-600 mb-6 md:mb-8 max-w-2xl mx-auto">
-                        Experience the difference that personalized service and genuine care can make.
-                        Let us protect what matters most to you.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
-                        <a href="#contact" className="btn-primary text-sm md:text-base">
-                            Get Started Today
-                        </a>
-                        <a href="#services" className="btn-secondary text-sm md:text-base">
-                            Explore Our Services
-                        </a>
-                    </div>
+                    <div className="text-center mt-4">
+                    <a href="/about" className="btn-primary text-sm md:text-base">
+                        Learn More About Us
+                    </a>
+                </div>
                 </motion.div>
             </div>
         </section>
