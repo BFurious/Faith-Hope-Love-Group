@@ -44,6 +44,7 @@ const footerSections = [
         links: [
             { name: 'Help Center', href: '/faq' },
             { name: 'Contact Us', href: '/contact' },
+            { name: 'Insurance Glossary', href: '/glossary' },
             { name: 'File a Claim', href: '/contact' },
             { name: 'Policy Documents', href: '/contact' },
             { name: 'FAQ', href: '/faq' },

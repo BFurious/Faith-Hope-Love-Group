@@ -3,102 +3,142 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import {
-    Car,
-    Home,
-    Heart,
     Shield,
-    Building,
+    Heart,
+    Home,
+    Car,
     Plane,
+    FileText,
+    Users,
+    Building,
+    CheckCircle,
     ArrowRight,
-    Check
+    Star,
+    Award,
+    Clock,
+    Phone,
+    Mail,
+    MapPin
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
 
 const services = [
     {
-        id: 'auto',
-        title: 'Auto Insurance',
-        description: 'Comprehensive coverage for your vehicle with competitive rates and 24/7 roadside assistance.',
-        icon: Car,
-        color: 'bg-blue-500',
-        features: [
-            'Collision & Comprehensive Coverage',
-            '24/7 Roadside Assistance',
-            'Glass Repair & Replacement',
-            'Rental Car Coverage'
-        ],
-        popular: true
-    },
-    {
-        id: 'home',
-        title: 'Home Insurance',
-        description: 'Protect your home and belongings with customizable coverage options and fast claim processing.',
-        icon: Home,
-        color: 'bg-green-500',
-        features: [
-            'Dwelling & Personal Property',
-            'Liability Protection',
-            'Additional Living Expenses',
-            'Natural Disaster Coverage'
-        ],
-        popular: false
-    },
-    {
-        id: 'life',
-        title: 'Life Insurance',
-        description: 'Secure your family\'s financial future with term and whole life insurance options.',
-        icon: Heart,
-        color: 'bg-red-500',
-        features: [
-            'Term & Whole Life Options',
-            'Accelerated Death Benefits',
-            'Cash Value Accumulation',
-            'Flexible Premium Payments'
-        ],
-        popular: false
-    },
-    {
-        id: 'health',
-        title: 'Health Insurance',
-        description: 'Comprehensive health coverage with access to top medical providers and specialists.',
         icon: Shield,
-        color: 'bg-purple-500',
+        title: 'Accident & Sickness Insurance',
+        description: 'Comprehensive accident and sickness insurance plans designed to provide financial protection and peace of mind for individuals and families.',
         features: [
-            'Preventive Care Coverage',
-            'Prescription Drug Benefits',
-            'Mental Health Services',
-            'Telehealth Options'
+            'Individual and Family Accident Insurance Plans',
+            'Short-Term Disability and Supplemental Health Insurance',
+            'Affordable Care Act (ACA) Compliant Plans',
+            'Medicare and Medicaid Assistance'
         ],
-        popular: false
+        color: 'primary'
     },
     {
-        id: 'business',
-        title: 'Business Insurance',
-        description: 'Protect your business with liability, property, and workers\' compensation coverage.',
         icon: Building,
-        color: 'bg-orange-500',
+        title: 'Property and Casualty Insurance',
+        description: 'Tailored Property and Casualty (P&C) insurance solutions for both individuals and businesses to protect their assets and manage liability risks.',
         features: [
-            'General Liability',
-            'Property Coverage',
-            'Workers\' Compensation',
-            'Business Interruption'
+            'Homeowners, Renters & Condo Insurance',
+            'Personal Auto Insurance',
+            'Commercial Property Insurance',
+            'General Liability & Commercial Auto'
         ],
-        popular: false
+        color: 'secondary'
     },
     {
-        id: 'travel',
-        title: 'Travel Insurance',
-        description: 'Travel with confidence knowing you\'re protected against unexpected events worldwide.',
-        icon: Plane,
-        color: 'bg-teal-500',
+        icon: Heart,
+        title: 'Life Insurance',
+        description: 'Comprehensive life insurance solutions designed to provide financial security and peace of mind for you and your loved ones.',
         features: [
-            'Trip Cancellation',
-            'Medical Emergency Coverage',
-            'Baggage Protection',
-            'Emergency Evacuation'
+            'Term Life Insurance',
+            'Whole Life Insurance',
+            'Universal Life Insurance',
+            'Final Expense Insurance'
         ],
-        popular: false
+        color: 'accent'
+    },
+    {
+        icon: FileText,
+        title: 'Title Insurance',
+        description: 'Comprehensive Title Insurance services to protect our clients during real estate transactions—whether buying, selling, or refinancing.',
+        features: [
+            'Title Search & Examination',
+            'Owner\'s Title Insurance',
+            'Lender\'s Title Insurance',
+            'Closing Support & Problem Resolution'
+        ],
+        color: 'primary'
+    },
+    {
+        icon: Plane,
+        title: 'Travel Insurance',
+        description: 'Travel Accident & Sickness Insurance and Travel Ticket Insurance to protect travelers from unexpected medical emergencies and travel-related risks.',
+        features: [
+            'Emergency Medical Coverage',
+            'Trip Cancellation & Interruption',
+            'Medical Evacuation & Repatriation',
+            '24/7 Emergency Assistance'
+        ],
+        color: 'secondary'
+    },
+    {
+        icon: Users,
+        title: 'Medicare Plans',
+        description: 'We take the confusion out of Medicare with comprehensive guidance and plan selection for Medicare Advantage, Supplement, and Prescription Drug Plans.',
+        features: [
+            'Medicare Advantage (Part C)',
+            'Medicare Supplement (Medigap)',
+            'Prescription Drug Plans (Part D)',
+            'Annual Plan Reviews & Comparisons'
+        ],
+        color: 'accent'
+    }
+]
+
+const benefits = [
+    {
+        icon: Shield,
+        title: 'Comprehensive Protection',
+        description: 'Complete coverage solutions for all aspects of your life and business'
+    },
+    {
+        icon: Star,
+        title: 'Expert Guidance',
+        description: 'Licensed professionals with years of experience in insurance'
+    },
+    {
+        icon: Heart,
+        title: 'Personalized Service',
+        description: 'Custom solutions tailored to your unique needs and budget'
+    },
+    {
+        icon: Award,
+        title: 'Trusted Partners',
+        description: 'Working with top-rated carriers to provide the best coverage'
+    }
+]
+
+const contactInfo = [
+    {
+        icon: Phone,
+        title: 'Call Us',
+        value: '770-882-4899',
+        description: 'Speak with a licensed specialist'
+    },
+    {
+        icon: Mail,
+        title: 'Email Us',
+        value: 'faithopelovegroup@gmail.com',
+        description: 'Get a quick response'
+    },
+    {
+        icon: MapPin,
+        title: 'Georgia Licensed',
+        value: 'Serving Georgia Residents',
+        description: 'Local expertise and support'
     }
 ]
 
@@ -109,128 +149,117 @@ export default function Services() {
     })
 
     return (
-        <section id="services" className="section-padding bg-gray-50">
+        <section id="services" className="section-padding bg-gradient-to-br from-gray-50 to-white">
             <div className="container-custom">
+                {/* Header */}
                 <motion.div
                     ref={ref}
                     initial={{ opacity: 0, y: 30 }}
                     animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                     transition={{ duration: 0.6 }}
-                    className="text-center mb-12 md:mb-16"
+                    className="text-center mb-16"
                 >
-                    <div className="inline-flex items-center px-3 md:px-4 py-2 bg-primary-50 rounded-full border border-primary-200 mb-4 md:mb-6">
-                        <Shield className="h-3 w-3 md:h-4 md:w-4 text-primary-600 mr-2" />
-                        <span className="text-primary-700 text-xs md:text-sm font-medium">
-                            Complete Protection Solutions
+                    <div className="inline-flex items-center px-4 py-2 bg-primary-50 rounded-full border border-primary-200 mb-6">
+                        <Shield className="h-4 w-4 text-primary-600 mr-2" />
+                        <span className="text-primary-700 text-sm font-medium">
+                            Our Services
                         </span>
                     </div>
-
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6 px-4">
-                        Insurance Services Tailored{' '}
-                        <span className="gradient-text">For You</span>
+                    <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                        Comprehensive{' '}
+                        <span className="gradient-text">Insurance Solutions</span>
                     </h2>
-
-                    <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-                        From auto to business insurance, we offer comprehensive coverage options
+                    <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Faith Hope Love Group Agency offers a complete range of insurance products and services
                         designed to protect what matters most to you and your family.
                     </p>
                 </motion.div>
 
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-4 lg:px-0">
-                    {services.map((service, index) => (
-                        <motion.div
-                            key={service.id}
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                            transition={{ duration: 0.6, delay: index * 0.1 }}
-                            className="relative group"
-                        >
-                            {service.popular && (
-                                <div className="absolute -top-2 md:-top-3 left-4 md:left-6 bg-secondary-500 text-white px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium z-10">
-                                    Most Popular
-                                </div>
-                            )}
-
-                            <div className={cn(
-                                "bg-white rounded-xl md:rounded-2xl p-6 md:p-8 shadow-soft hover:shadow-large transition-all duration-300 h-full",
-                                "border border-gray-100 hover:border-primary-200",
-                                "transform hover:scale-105"
-                            )}>
-                                {/* Icon */}
-                                <div className="relative mb-4 md:mb-6">
-                                    <div className={cn(
-                                        "inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl text-white",
-                                        service.color
-                                    )}>
-                                        <service.icon className="h-6 w-6 md:h-8 md:w-8" />
+                {/* Services Grid */}
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                    {services.map((service, index) => {
+                        const IconComponent = service.icon
+                        return (
+                            <motion.div
+                                key={service.title}
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                                transition={{ duration: 0.6, delay: index * 0.1 }}
+                                className="group"
+                            >
+                                <div className="bg-white rounded-2xl p-6 md:p-8 shadow-soft hover:shadow-medium transition-all duration-300 h-full border border-gray-100">
+                                    <div className={`flex items-center justify-center w-16 h-16 rounded-2xl mb-6 ${service.color === 'primary' ? 'bg-primary-100' :
+                                        service.color === 'secondary' ? 'bg-secondary-100' : 'bg-accent-100'
+                                        }`}>
+                                        <IconComponent className={`h-8 w-8 ${service.color === 'primary' ? 'text-primary-600' :
+                                            service.color === 'secondary' ? 'text-secondary-600' : 'text-accent-600'
+                                            }`} />
                                     </div>
-                                    <div className={cn(
-                                        "absolute inset-0 rounded-xl md:rounded-2xl blur-lg opacity-30",
-                                        service.color
-                                    )} />
-                                </div>
-
-                                {/* Content */}
-                                <div className="space-y-3 md:space-y-4 mb-4 md:mb-6">
-                                    <h3 className="text-lg md:text-2xl font-bold text-gray-900 group-hover:text-primary-600 transition-colors duration-300">
+                                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">
                                         {service.title}
                                     </h3>
-                                    <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                                    <p className="text-gray-600 mb-6 leading-relaxed">
                                         {service.description}
                                     </p>
+                                    <ul className="space-y-3 mb-6">
+                                        {service.features.map((feature, featureIndex) => (
+                                            <li key={featureIndex} className="flex items-start">
+                                                <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
+                                                <span className="text-gray-700 text-sm">{feature}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <Link
+                                        href="/contact"
+                                        className={`inline-flex items-center gap-2 font-semibold transition-colors duration-300 ${service.color === 'primary' ? 'text-primary-600 hover:text-primary-700' :
+                                            service.color === 'secondary' ? 'text-secondary-600 hover:text-secondary-700' :
+                                                'text-accent-600 hover:text-accent-700'
+                                            }`}
+                                    >
+                                        Learn More
+                                        <ArrowRight className="h-4 w-4" />
+                                    </Link>
                                 </div>
-
-                                {/* Features */}
-                                <div className="space-y-2 md:space-y-3 mb-6 md:mb-8">
-                                    {service.features.map((feature, featureIndex) => (
-                                        <div key={featureIndex} className="flex items-center text-xs md:text-sm text-gray-600">
-                                            <Check className="h-3 w-3 md:h-4 md:w-4 text-accent-500 mr-2 md:mr-3 flex-shrink-0" />
-                                            {feature}
-                                        </div>
-                                    ))}
-                                </div>
-
-                                {/* CTA */}
-                                <button className="group w-full flex items-center justify-center text-primary-600 font-semibold hover:text-primary-700 transition-colors duration-300 text-sm md:text-base">
-                                    Learn More
-                                    <ArrowRight className="ml-2 h-3 w-3 md:h-4 md:w-4 transition-transform group-hover:translate-x-1" />
-                                </button>
-                            </div>
-                        </motion.div>
-                    ))}
+                            </motion.div>
+                        )
+                    })}
                 </div>
 
-                {/* Bottom CTA */}
+                {/* Benefits Section */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                    transition={{ duration: 0.6, delay: 0.8 }}
-                    className="text-center mt-12 md:mt-16 mx-4 lg:mx-0"
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    className="bg-gradient-to-r from-primary-600 via-primary-700 to-primary-800 rounded-3xl p-8 md:p-12 text-white mb-16"
                 >
-                    <div className="bg-gradient-to-r from-primary-600 to-primary-700 rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-12 text-white">
-                        <h3 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4">
-                            Need a Custom Insurance Solution?
+                    <div className="text-center mb-12">
+                        <h3 className="text-3xl md:text-4xl font-bold mb-4">
+                            Why Choose Faith Hope Love Group?
                         </h3>
-                        <p className="text-lg md:text-xl text-primary-100 mb-6 md:mb-8 max-w-2xl mx-auto">
-                            Our expert agents will work with you to create a personalized insurance package
+                        <p className="text-xl text-primary-100 max-w-2xl mx-auto">
+                            We're committed to providing exceptional service and comprehensive protection
                             that fits your unique needs and budget.
                         </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Link
-                                href="/contact"
-                                className="btn-primary group"
-                            >
-                                Get Free Quote
-                                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                            </Link>
-                            <Link
-                                href="/services"
-                                className="btn-secondary group"
-                            >
-                                View All Services
-                                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                            </Link>
-                        </div>
+                    </div>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {benefits.map((benefit, index) => {
+                            const IconComponent = benefit.icon
+                            return (
+                                <motion.div
+                                    key={benefit.title}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                                    transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
+                                    className="text-center"
+                                >
+                                    <div className="flex items-center justify-center w-16 h-16 bg-white/20 rounded-full mx-auto mb-4">
+                                        <IconComponent className="h-8 w-8 text-white" />
+                                    </div>
+                                    <h4 className="font-semibold text-white mb-2">{benefit.title}</h4>
+                                    <p className="text-primary-100 text-sm">{benefit.description}</p>
+                                </motion.div>
+                            )
+                        })}
                     </div>
                 </motion.div>
             </div>
