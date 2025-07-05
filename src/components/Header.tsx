@@ -6,6 +6,7 @@ import { Menu, X, Phone, Mail, Shield } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import Image from 'next/image'
 
 const navigation = [
     { name: 'Home', href: '/' },
@@ -75,13 +76,12 @@ export default function Header() {
                             className="flex items-center space-x-3"
                         >
                             <Link href="/" className="flex items-center space-x-3">
-                                <div className="relative">
-                                    <Shield className="h-10 w-10 text-primary-600" />
-                                    <div className="absolute inset-0 bg-primary-600/20 rounded-lg blur-lg" />
+                                <div className="relative h-16 md:h-16 w-28 md:w-28 rounded-2xl bg-white/10 flex items-center justify-center px-1 py-2 md:px-2">
+                                    <Image src="/faith_logo_png.png" alt="Faith Hope Love Group Logo" fill priority className="rounded-2xl object-fill" />
                                 </div>
                                 <div>
                                     <h1 className="text-2xl font-bold gradient-text">
-                                        Hope Faith & Love Group
+                                        Faith Hope & Love Group
                                     </h1>
                                     <p className="text-xs text-gray-600 font-medium">
                                         Insurance & Protection

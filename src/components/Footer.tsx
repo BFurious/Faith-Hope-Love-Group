@@ -15,6 +15,7 @@ import {
     Linkedin,
     Heart
 } from 'lucide-react'
+import Image from 'next/image'
 
 const footerSections = [
     {
@@ -74,13 +75,12 @@ export default function Footer() {
                         {/* Brand Section */}
                         <div className="space-y-4 md:space-y-6 px-4 lg:px-0">
                             <Link href="/" className="flex items-center space-x-2 md:space-x-3">
-                                <div className="relative">
-                                    <Shield className="h-8 w-8 md:h-10 md:w-10 text-primary-400" />
-                                    <div className="absolute inset-0 bg-primary-400/20 rounded-lg blur-lg" />
+                                <div className="relative h-16 md:h-20 w-28 md:w-32 rounded-2xl bg-white/10 flex items-center justify-center px-1 py-2 md:px-2 shadow-lg">
+                                    <Image src="/faith_logo.png" alt="Faith Hope Love Group Logo" fill priority className="rounded-2xl object-fill" />
                                 </div>
                                 <div>
                                     <h3 className="text-xl md:text-2xl font-bold gradient-text">
-                                        Hope Faith & Love Group
+                                        Faith Hope & Love Group
                                     </h3>
                                     <p className="text-gray-400 text-xs md:text-sm">
                                         Insurance & Protection
@@ -167,7 +167,7 @@ export default function Footer() {
                     <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 px-4 lg:px-0">
                         <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4 text-gray-400 text-xs md:text-sm">
                             <div className="flex items-center space-x-1">
-                                <span>&copy; 2024 Hope Faith & Love Group.</span>
+                                <span>&copy; 2024 Faith Hope & Love Group.</span>
                                 <span className="hidden sm:inline">All rights reserved.</span>
                             </div>
                             <div className="flex items-center space-x-4">

@@ -141,95 +141,28 @@ export default function SocialShareWidget({
                 transition={{ duration: 0.3, ease: "easeOut" }}
                 className="relative"
             >
-                {/* Main Share Button */}
+                {/* Main Trigger Button - Chevron Left */}
                 <motion.button
                     onClick={toggleWidget}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="flex items-center justify-center w-16 h-16 bg-primary-600 text-white rounded-l-xl shadow-lg hover:bg-primary-700 transition-colors duration-300"
+                    className="flex items-center justify-center w-12 h-16 bg-primary-600 text-white rounded-l-xl shadow-lg hover:bg-primary-700 transition-colors duration-300"
+                    aria-label="Open social drawer"
                 >
-                    {isOpen ? (
-                        <X className="h-6 w-6" />
-                    ) : (
-                        <Share2 className="h-6 w-6" />
-                    )}
+                    <ChevronLeft className="h-7 w-7" />
                 </motion.button>
 
                 {/* Drawer Content */}
                 <AnimatePresence>
-                    {isOpen && (
+                    {(isOpen || isHovered) && (
                         <motion.div
                             initial={{ x: 300, opacity: 0 }}
                             animate={{ x: 0, opacity: 1 }}
                             exit={{ x: 300, opacity: 0 }}
                             transition={{ duration: 0.3, ease: "easeOut" }}
-                            className="absolute right-16 top-0 bg-white rounded-l-xl shadow-2xl border border-gray-200 p-6 min-w-[280px]"
+                            className="absolute right-12 top-0 bg-white rounded-l-xl shadow-2xl border border-gray-200 p-4 flex flex-col gap-4"
                         >
-                            {/* Header */}
-                            <div className="flex items-center justify-between mb-6">
-                                <h3 className="text-lg font-semibold text-gray-900">Share this page</h3>
-                                <button
-                                    onClick={toggleWidget}
-                                    className="text-gray-400 hover:text-gray-600 transition-colors"
-                                >
-                                    <X className="h-4 w-4" />
-                                </button>
-                            </div>
-
-                            {/* Platform Grid */}
-                            <div className="grid grid-cols-2 gap-3 mb-6">
-                                {socialPlatforms.map((platform) => {
-                                    const IconComponent = platform.icon
-                                    return (
-                                        <motion.button
-                                            key={platform.name}
-                                            onClick={() => handleShare(platform)}
-                                            whileHover={{ scale: 1.05 }}
-                                            whileTap={{ scale: 0.95 }}
-                                            className={`relative flex flex-col items-center gap-2 p-3 rounded-lg text-white transition-all duration-300 ${platform.color} ${activePlatform === platform.name ? 'ring-2 ring-white ring-offset-2' : ''
-                                                }`}
-                                            title={platform.description}
-                                        >
-                                            <IconComponent className="h-5 w-5" />
-                                            <span className="text-xs font-medium">{platform.name}</span>
-
-                                            {/* Success Animation */}
-                                            {activePlatform === platform.name && (
-                                                <motion.div
-                                                    initial={{ scale: 0 }}
-                                                    animate={{ scale: 1 }}
-                                                    exit={{ scale: 0 }}
-                                                    className="absolute -top-1 -right-1 bg-green-500 text-white rounded-full p-1"
-                                                >
-                                                    <Check className="h-3 w-3" />
-                                                </motion.div>
-                                            )}
-                                        </motion.button>
-                                    )
-                                })}
-                            </div>
-
-                            {/* URL Display */}
-                            <div className="p-3 bg-gray-50 rounded-lg">
-                                <p className="text-xs text-gray-600 mb-1">Share this URL:</p>
-                                <p className="text-xs text-gray-800 font-mono break-all">
-                                    {currentUrl}
-                                </p>
-                            </div>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
-
-                {/* Hover Drawer - Vertical Social Icons */}
-                <AnimatePresence>
-                    {isHovered && !isOpen && (
-                        <motion.div
-                            initial={{ x: 100, opacity: 0 }}
-                            animate={{ x: 0, opacity: 1 }}
-                            exit={{ x: 100, opacity: 0 }}
-                            transition={{ duration: 0.2 }}
-                            className="absolute right-16 top-0 bg-white rounded-l-xl shadow-lg border border-gray-200 p-4"
-                        >
+                            {/* Social Icons Only */}
                             <div className="flex flex-col gap-3">
                                 {socialPlatforms.slice(0, 4).map((platform) => {
                                     const IconComponent = platform.icon
@@ -238,11 +171,11 @@ export default function SocialShareWidget({
                                             key={platform.name}
                                             onClick={() => handleShare(platform)}
                                             whileHover={{ scale: 1.1 }}
-                                            whileTap={{ scale: 0.9 }}
+                                            whileTap={{ scale: 0.95 }}
                                             className={`flex items-center justify-center w-12 h-12 rounded-lg text-white transition-all duration-300 ${platform.color}`}
                                             title={platform.description}
                                         >
-                                            <IconComponent className="h-5 w-5" />
+                                            <IconComponent className="h-6 w-6" />
                                         </motion.button>
                                     )
                                 })}
