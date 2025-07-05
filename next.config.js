@@ -34,6 +34,16 @@ const nextConfig = {
             fs: false,
         }
 
+        // Add explicit path resolution
+        config.resolve.alias = {
+            ...config.resolve.alias,
+            '@': require('path').resolve(__dirname, 'src'),
+            '@/components': require('path').resolve(__dirname, 'src/components'),
+            '@/lib': require('path').resolve(__dirname, 'src/lib'),
+            '@/types': require('path').resolve(__dirname, 'src/types'),
+            '@/app': require('path').resolve(__dirname, 'src/app'),
+        }
+
         // Optimize bundle splitting
         if (!isServer) {
             config.optimization.splitChunks = {

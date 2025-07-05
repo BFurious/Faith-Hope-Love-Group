@@ -35,8 +35,13 @@
             ],
             "@/types/*": [
                 "./src/types/*"
+            ],
+            "@/app/*": [
+                "./src/app/*"
             ]
-        }
+        },
+        "forceConsistentCasingInFileNames": true,
+        "allowSyntheticDefaultImports": true
     },
     "include": [
         "next-env.d.ts",
