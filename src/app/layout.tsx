@@ -2,7 +2,6 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import { Metadata, Viewport } from 'next'
 import FloatingSocialShareWrapper from '@/components/FloatingSocialShareWrapper'
-import TranslationWidgetWrapper from '@/components/TranslationWidgetWrapper'
 
 const inter = Inter({
     subsets: ['latin'],
@@ -174,7 +173,6 @@ export default function RootLayout({
                 <div className="min-h-screen bg-white">
                     {children}
                     <FloatingSocialShareWrapper />
-                    <TranslationWidgetWrapper />
                 </div>
             </body>
         </html>

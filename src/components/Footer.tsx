@@ -75,8 +75,8 @@ export default function Footer() {
                         {/* Brand Section */}
                         <div className="space-y-4 md:space-y-6 px-4 lg:px-0">
                             <Link href="/" className="flex items-center space-x-2 md:space-x-3">
-                                <div className="relative h-16 md:h-20 w-28 md:w-32 rounded-2xl bg-white/10 flex items-center justify-center px-1 py-2 md:px-2 shadow-lg">
-                                    <Image src="/faith_logo.png" alt="Faith Hope Love Group Logo" fill priority className="rounded-2xl object-fill" />
+                                <div className="relative h-16 md:h-18 w-28 md:w-28 rounded-xl bg-white flex items-center justify-center px-1 py-2 md:px-2 shadow-lg">
+                                    <Image src="/faith_logo.png" alt="Faith Hope Love Group Logo" fill priority className="rounded-xl object-fill" />
                                 </div>
                                 <div>
                                     <h3 className="text-xl md:text-2xl font-bold gradient-text">
