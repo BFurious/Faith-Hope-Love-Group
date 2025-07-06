@@ -5,9 +5,9 @@ import {
     About,
     Testimonials,
     FAQ,
-    Contact,
     Footer
 } from '@/components'
+import HomeContact from '@/components/HomeContact'
 import Disclaimer from '@/components/Disclaimer'
 
 export default function Home() {
@@ -19,7 +19,7 @@ export default function Home() {
             <About />
             <Testimonials />
             <FAQ />
-            <Contact />
+            <HomeContact />
             <Footer />
         </main>
     )

@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import {
@@ -13,9 +14,12 @@ import {
     Twitter,
     Instagram,
     Linkedin,
-    Heart
+    Heart,
+    CheckCircle2,
+    AlertCircle
 } from 'lucide-react'
 import Image from 'next/image'
+import { emailService } from '@/lib/emailService'
 
 const footerSections = [
     {
@@ -62,8 +66,53 @@ const socialLinks = [
 ]
 
 export default function Footer() {
+    const [newsletterEmail, setNewsletterEmail] = useState('')
+    const [newsletterLoading, setNewsletterLoading] = useState(false)
+    const [newsletterSuccess, setNewsletterSuccess] = useState(false)
+    const [newsletterError, setNewsletterError] = useState('')
+
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+
+    const handleNewsletterSignup = async (e: React.FormEvent) => {
+        e.preventDefault()
+
+        if (!newsletterEmail.trim()) {
+            setNewsletterError('Please enter your email address')
+            return
+        }
+
+        setNewsletterLoading(true)
+        setNewsletterError('')
+
+        try {
+            const response = await emailService.sendNewsletterSubscription(newsletterEmail)
+
+            if (response.success) {
+                setNewsletterSuccess(true)
+                setNewsletterEmail('')
+                setTimeout(() => setNewsletterSuccess(false), 5000)
+            } else {
+                setNewsletterError(response.error || 'Failed to subscribe')
+            }
+        } catch (error: any) {
+            setNewsletterError('Failed to subscribe. Please try again.')
+        } finally {
+            setNewsletterLoading(false)
+        }
+    }
+
+    const handleContactClick = (type: 'email' | 'phone') => {
+        if (type === 'email') {
+            window.location.href = emailService.getDirectEmailLink(
+                'faithopelovegroup@gmail.com',
+                'Inquiry from Faith Hope Love Group Website',
+                'Hello, I would like to learn more about your insurance services.'
+            )
+        } else if (type === 'phone') {
+            window.location.href = emailService.getPhoneCallLink('770-882-4899')
+        }
     }
 
     return (
@@ -95,11 +144,17 @@ export default function Footer() {
 
                             {/* Contact Info */}
                             <div className="space-y-2 md:space-y-3">
-                                <div className="flex items-center space-x-2 md:space-x-3 text-gray-300">
+                                <div
+                                    className="flex items-center space-x-2 md:space-x-3 text-gray-300 hover:text-primary-400 transition-colors duration-300 cursor-pointer"
+                                    onClick={() => handleContactClick('phone')}
+                                >
                                     <Phone className="h-4 w-4 md:h-5 md:w-5 text-primary-400 flex-shrink-0" />
                                     <span className="text-sm md:text-base">770-882-4899</span>
                                 </div>
-                                <div className="flex items-center space-x-2 md:space-x-3 text-gray-300">
+                                <div
+                                    className="flex items-center space-x-2 md:space-x-3 text-gray-300 hover:text-primary-400 transition-colors duration-300 cursor-pointer"
+                                    onClick={() => handleContactClick('email')}
+                                >
                                     <Mail className="h-4 w-4 md:h-5 md:w-5 text-primary-400 flex-shrink-0" />
                                     <span className="text-sm md:text-base">faithopelovegroup@gmail.com</span>
                                 </div>
@@ -148,17 +203,48 @@ export default function Footer() {
                                     Get insurance tips, safety advice, and exclusive offers delivered to your inbox.
                                 </p>
                             </div>
-                            <div className="flex flex-col sm:flex-row gap-3 md:max-w-md md:w-full md:ml-8">
+                            <form onSubmit={handleNewsletterSignup} className="flex flex-col sm:flex-row gap-3 md:max-w-md md:w-full md:ml-8">
                                 <input
                                     type="email"
                                     placeholder="Enter your email"
+                                    value={newsletterEmail}
+                                    onChange={(e) => setNewsletterEmail(e.target.value)}
                                     className="flex-1 px-4 py-2 md:py-3 rounded-lg bg-gray-700 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-primary-400 transition-colors duration-300 text-sm md:text-base"
+                                    disabled={newsletterLoading}
                                 />
-                                <button className="bg-primary-600 hover:bg-primary-700 text-white font-semibold px-6 py-2 md:py-3 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm md:text-base">
-                                    Subscribe
+                                <button
+                                    type="submit"
+                                    disabled={newsletterLoading}
+                                    className="bg-primary-600 hover:bg-primary-700 text-white font-semibold px-6 py-2 md:py-3 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm md:text-base disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                                >
+                                    {newsletterLoading ? (
+                                        <>
+                                            <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                                            Subscribing...
+                                        </>
+                                    ) : newsletterSuccess ? (
+                                        <>
+                                            <CheckCircle2 className="h-4 w-4" />
+                                            Subscribed!
+                                        </>
+                                    ) : (
+                                        'Subscribe'
+                                    )}
                                 </button>
-                            </div>
+                            </form>
                         </div>
+
+                        {/* Newsletter error message */}
+                        {newsletterError && (
+                            <motion.div
+                                initial={{ opacity: 0, y: -10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                className="flex items-center justify-center mt-3 text-red-400 text-sm"
+                            >
+                                <AlertCircle className="h-4 w-4 mr-2" />
+                                {newsletterError}
+                            </motion.div>
+                        )}
                     </div>
                 </div>
 
