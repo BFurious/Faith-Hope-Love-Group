@@ -142,7 +142,11 @@ const contactInfo = [
     }
 ]
 
-export default function Services() {
+interface ServicesProps {
+    showLimited?: boolean
+}
+
+export default function Services({ showLimited = false }: ServicesProps) {
     const [ref, inView] = useInView({
         triggerOnce: true,
         threshold: 0.1
@@ -177,7 +181,7 @@ export default function Services() {
 
                 {/* Services Grid */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-                    {services.map((service, index) => {
+                    {(showLimited ? services.slice(0, 5) : services).map((service, index) => {
                         const IconComponent = service.icon
                         return (
                             <motion.div
@@ -187,7 +191,7 @@ export default function Services() {
                                 transition={{ duration: 0.6, delay: index * 0.1 }}
                                 className="group"
                             >
-                                <div className="bg-white rounded-2xl p-6 md:p-8 shadow-soft hover:shadow-medium transition-all duration-300 h-full border border-gray-100">
+                                <div className="bg-white rounded-2xl p-6 md:p-8 shadow-soft hover:shadow-medium transition-all duration-300 h-full border border-gray-100 flex flex-col">
                                     <div className={`flex items-center justify-center w-16 h-16 rounded-2xl mb-6 ${service.color === 'primary' ? 'bg-primary-100' :
                                         service.color === 'secondary' ? 'bg-secondary-100' : 'bg-accent-100'
                                         }`}>
@@ -201,7 +205,7 @@ export default function Services() {
                                     <p className="text-gray-600 mb-6 leading-relaxed">
                                         {service.description}
                                     </p>
-                                    <ul className="space-y-3 mb-6">
+                                    <ul className="space-y-3 mb-6 flex-grow">
                                         {service.features.map((feature, featureIndex) => (
                                             <li key={featureIndex} className="flex items-start">
                                                 <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
@@ -211,7 +215,7 @@ export default function Services() {
                                     </ul>
                                     <Link
                                         href="/contact"
-                                        className={`inline-flex items-center gap-2 font-semibold transition-colors duration-300 ${service.color === 'primary' ? 'text-primary-600 hover:text-primary-700' :
+                                        className={`inline-flex items-center gap-2 font-semibold transition-colors duration-300 mt-auto ${service.color === 'primary' ? 'text-primary-600 hover:text-primary-700' :
                                             service.color === 'secondary' ? 'text-secondary-600 hover:text-secondary-700' :
                                                 'text-accent-600 hover:text-accent-700'
                                             }`}
@@ -223,6 +227,34 @@ export default function Services() {
                             </motion.div>
                         )
                     })}
+
+                    {/* Explore More Card - only show when limited */}
+                    {showLimited && (
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                            transition={{ duration: 0.6, delay: 0.5 }}
+                            className="group"
+                        >
+                            <Link href="/services">
+                                <div className="bg-gradient-to-br from-primary-600 to-primary-700 rounded-2xl p-6 md:p-8 shadow-soft hover:shadow-medium transition-all duration-300 h-full border border-primary-200 flex flex-col items-center justify-center text-white text-center group-hover:scale-105">
+                                    <div className="flex items-center justify-center w-16 h-16 bg-white/20 rounded-2xl mb-6">
+                                        <ArrowRight className="h-8 w-8 text-white" />
+                                    </div>
+                                    <h3 className="text-xl md:text-2xl font-bold mb-4">
+                                        Explore More Services
+                                    </h3>
+                                    <p className="text-primary-100 mb-6 leading-relaxed">
+                                        Discover our complete range of insurance solutions and specialized services designed to protect what matters most.
+                                    </p>
+                                    <div className="inline-flex items-center gap-2 font-semibold transition-colors duration-300 mt-auto">
+                                        View All Services
+                                        <ArrowRight className="h-4 w-4" />
+                                    </div>
+                                </div>
+                            </Link>
+                        </motion.div>
+                    )}
                 </div>
 
                 {/* Benefits Section */}

@@ -599,4 +599,4 @@ export function FloatingSocialShare(props?: Partial<SocialShareWidgetProps>) {
             )}
         </AnimatePresence>
     )
-}
+} 

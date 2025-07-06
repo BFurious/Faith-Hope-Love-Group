@@ -15,7 +15,7 @@ export default function Home() {
         <main>
             <Header />
             <Hero />
-            <Services />
+            <Services showLimited={true} />
             <About />
             <Testimonials />
             <FAQ />
