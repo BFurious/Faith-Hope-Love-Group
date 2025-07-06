@@ -5,6 +5,7 @@ import { useInView } from 'react-intersection-observer'
 import { Star, Quote, ChevronLeft, ChevronRight, Shield, Award, Sparkles, ArrowRight } from 'lucide-react'
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
+import { STATS } from './Hero'
 
 const testimonials = [
     {
@@ -97,32 +98,7 @@ const testimonials = [
     }
 ]
 
-const impactStats = [
-    {
-        icon: Shield,
-        value: '$2.3B+',
-        label: 'Claims Paid Out',
-        description: 'Life-changing support delivered'
-    },
-    {
-        icon: Award,
-        value: '99.8%',
-        label: 'Claims Approved',
-        description: 'We say YES when others say no'
-    },
-    {
-        icon: Star,
-        value: '4.9★',
-        label: 'Customer Rating',
-        description: 'Consistently rated #1'
-    },
-    {
-        icon: Sparkles,
-        value: '72hrs',
-        label: 'Average Claim Time',
-        description: 'Lightning-fast support'
-    }
-]
+
 
 export default function Testimonials() {
     const [ref, inView] = useInView({
@@ -181,7 +157,7 @@ export default function Testimonials() {
                     transition={{ duration: 0.8, delay: 0.3 }}
                     className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 mb-16 md:mb-20 px-4 lg:px-0"
                 >
-                    {impactStats.map((stat, index) => (
+                    {STATS.map((stat, index) => (
                         <motion.div
                             key={stat.label}
                             initial={{ opacity: 0, scale: 0.8 }}

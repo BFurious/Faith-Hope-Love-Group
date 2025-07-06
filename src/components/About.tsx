@@ -43,16 +43,6 @@ const achievements = [
         icon: Users,
         stat: '50,000+',
         label: 'Satisfied Customers'
-    },
-    {
-        icon: CheckCircle,
-        stat: '99.9%',
-        label: 'Claims Approved'
-    },
-    {
-        icon: TrendingUp,
-        stat: '$2B+',
-        label: 'Claims Paid Out'
     }
 ]
 
@@ -65,7 +55,7 @@ const features = [
     {
         icon: Clock,
         title: 'Personal Relationship',
-        description: 'Dedicated agents who know you and your needs'
+        description: 'Dedicated agent who know you and your needs'
     },
     {
         icon: TrendingUp,

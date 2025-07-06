@@ -15,7 +15,7 @@ export default function FloatingContactButton() {
             icon: Phone,
             label: 'Call Us',
             action: () => {
-                window.location.href = emailService.getPhoneCallLink('770-882-4899')
+                window.location.href = emailService.getPhoneCallLink('+1-770-882-4899')
             },
             color: 'bg-green-500',
             hoverColor: 'hover:bg-green-600'

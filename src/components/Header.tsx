@@ -40,7 +40,7 @@ export default function Header() {
                         <div className="flex items-center space-x-6">
                             <div className="flex items-center space-x-2">
                                 <Phone className="h-4 w-4" />
-                                <span>770-882-4899</span>
+                                <span>+1-770-882-4899</span>
                             </div>
                             <div className="flex items-center space-x-2">
                                 <Mail className="h-4 w-4" />
@@ -48,7 +48,7 @@ export default function Header() {
                             </div>
                         </div>
                         <div className="text-sm">
-                            Available 24/7 for Emergency Claims
+                            Available 24/7 for Emergency Claims Support
                         </div>
                     </div>
                 </div>

@@ -144,7 +144,7 @@ const glossaryCategories = [
             },
             {
                 term: 'Temporary Life Insurance (Term Life)',
-                definition: 'Provides pure, temporary protection with the maximum coverage at the lowest initial premium. No cash value or equity. Types include: Level Term (fixed death benefit for set period), Increasing Term (death benefit increases periodically), Decreasing Term (death benefit decreases over time, e.g., mortgage redemption insurance), Credit Life (covers debtor\'s loan balance if they die before loan repayment). Features include option to convert to permanent insurance without evidence of insurability, option to renew without evidence of insurability, step-up premiums that increase steadily, and annually renewable term (ART) allowing yearly renewals. Advantages: less expensive than permanent insurance, protects insurability, suitable for debts or supplementing permanent insurance. Disadvantages: coverage ends when term expires, premiums increase with age, no cash value, few claims paid due to temporary nature.'
+                definition: 'Provides pure, temporary protection with the maximum coverage at the lowest initial premium. No cash value or equity. Types include: Level Term (fixed death benefit for set period), Increasing Term (death benefit increases periodically), Decreasing Term (death benefit decreases over time, e.g., mortgage redemption insurance), Credit Life (covers debtor\'s loan balance if they die before loan repayment). Features include option to convert to permanent insurance without evidence of insurability, option to renew without evidence of insurability, step-up premiums that increase steadily, and annually renewable term (ART) allowing yearly renewals. Advantages: less expensive than permanent insurance, protects insurability, suitable for debts or supplementing permanent insurance. Disadvantages: coverage ends when term expires, premiums increase with age, no cash value.'
             },
             {
                 term: 'Permanent Life Insurance (Whole Life)',
@@ -224,7 +224,7 @@ const glossaryCategories = [
             },
             {
                 term: 'Industrial (Home Service) Life Insurance',
-                definition: 'Small face amounts (e.g., $1,000), premiums collected weekly or monthly at the policy owner\'s home. Often marketed as burial insurance; may include accidental death benefits. Also called home service or debit companies, which assign agents to geographic areas (debits). Monthly debit ordinary life insurance is a hybrid of industrial and ordinary life insurance with higher face amounts and premiums. Industrial life insurance was once common but has declined due to higher wages, better life insurance awareness, and employer group coverage.'
+                definition: 'Small face amounts (e.g., $1,000), premiums collected weekly or monthly at the policy owner\'s home. Often marketed as burial insurance; may include accidental death benefits. Also called home service or debit companies, which assign agent to geographic areas (debits). Monthly debit ordinary life insurance is a hybrid of industrial and ordinary life insurance with higher face amounts and premiums. Industrial life insurance was once common but has declined due to higher wages, better life insurance awareness, and employer group coverage.'
             },
             {
                 term: 'Face Amount Plus Cash Value',

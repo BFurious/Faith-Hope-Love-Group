@@ -38,7 +38,7 @@ const services = [
     },
     {
         icon: Building,
-        title: 'Property and Casualty Insurance',
+        title: 'Property & Casualty Insurance',
         description: 'Tailored Property and Casualty (P&C) insurance solutions for both individuals and businesses to protect their assets and manage liability risks.',
         features: [
             'Homeowners, Renters & Condo Insurance',
@@ -125,7 +125,7 @@ const contactInfo = [
     {
         icon: Phone,
         title: 'Call Us',
-        value: '770-882-4899',
+        value: '+1-770-882-4899',
         description: 'Speak with a licensed specialist'
     },
     {

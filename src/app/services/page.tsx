@@ -21,7 +21,7 @@ const detailedServices = [
     },
     {
         icon: Building,
-        title: 'Property and Casualty Insurance',
+        title: 'Property & Casualty Insurance',
         description: 'Faith Hope Love Group Agency provides tailored Property and Casualty (P&C) insurance solutions for both individuals and businesses to protect their assets and manage liability risks.',
         features: [
             'Homeowners Insurance: Coverage for your residence and personal property against risks like fire, theft, storms, and liability for injuries on your property.',
@@ -90,10 +90,13 @@ const detailedServices = [
             'Bilingual Support: Available for families, gig workers, and small business owners with special enrollment period help.'
         ],
         color: 'primary'
-    },
+    }
+]
+
+const additionalServices = [
     {
         icon: FileText,
-        title: 'Immigration & Notary Services',
+        title: 'Immigration Services',
         description: 'Professional assistance with immigration forms, correspondence, and notary services for official document authentication.',
         features: [
             'Immigration Form Assistance: Support with completing and organizing immigration-related forms and correspondence.',
@@ -102,6 +105,17 @@ const detailedServices = [
             'Translation Services: Reliable translation and interpretation services between French and English for clear communication.'
         ],
         color: 'secondary'
+    },
+    {
+        icon: FileText,
+        title: 'Notary Services',
+        description: 'Professional assistance with immigration forms, correspondence, and notary services for official document authentication.',
+        features: [
+            'Immigration Form Assistance: Support with completing and organizing immigration-related forms and correspondence.',
+            'Professional Notary Services: Licensed notaries verify identity, ensure voluntary signing, and affix official seals to certify authenticity.',
+            'Document Authentication: We notarize a wide range of documents including Powers of Attorney, Affidavits, Contracts, and Real Estate Documents.',
+            'Translation Services: Reliable translation and interpretation services between French and English for clear communication.'
+        ],
     }
 ]
 
@@ -132,7 +146,7 @@ const contactInfo = [
     {
         icon: Phone,
         title: 'Call Us',
-        value: '770-882-4899',
+        value: '+1-770-882-4899',
         description: 'Speak with a licensed specialist'
     },
     {
@@ -184,11 +198,11 @@ export default function ServicesPage() {
                                 <ArrowRight className="h-5 w-5" />
                             </Link>
                             <a
-                                href="tel:770-882-4899"
+                                href="tel:+1-770-882-4899"
                                 className="inline-flex items-center gap-2 bg-transparent border-2 border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white hover:text-primary-600 transition-colors duration-300"
                             >
                                 <Phone className="h-5 w-5" />
-                                Call 770-882-4899
+                                Call +1-770-882-4899
                             </a>
                         </div>
                     </motion.div>
@@ -258,77 +272,41 @@ export default function ServicesPage() {
                     </motion.div>
 
                     <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, amount: 0.6 }}
-                            transition={{ duration: 0.7, delay: 0.1 }}
-                            className="bg-white rounded-2xl p-8 shadow-soft hover:shadow-medium transition-all duration-300"
-                        >
-                            <div className="flex items-center justify-center w-16 h-16 bg-primary-100 rounded-2xl mb-6">
-                                <FileText className="h-8 w-8 text-primary-600" />
-                            </div>
-                            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                                Obamacare Enrollment
-                            </h3>
-                            <p className="text-gray-600 mb-6 leading-relaxed text-lg">
-                                Your local ACA enrollment experts helping you find affordable health plans and maximize subsidies & tax credits.
-                            </p>
-                            <ul className="space-y-4">
-                                <li className="flex items-start">
-                                    <CheckCircle className="h-6 w-6 text-green-500 mt-1 mr-3 flex-shrink-0" />
-                                    <span className="text-gray-700">Free ACA Marketplace Assistance: We help you apply through the ACA Marketplace with side-by-side comparison of Bronze, Silver, Gold & Platinum plans.</span>
-                                </li>
-                                <li className="flex items-start">
-                                    <CheckCircle className="h-6 w-6 text-green-500 mt-1 mr-3 flex-shrink-0" />
-                                    <span className="text-gray-700">Subsidy & Tax Credit Maximization: We help you understand what's covered and maximize available subsidies and tax credits.</span>
-                                </li>
-                                <li className="flex items-start">
-                                    <CheckCircle className="h-6 w-6 text-green-500 mt-1 mr-3 flex-shrink-0" />
-                                    <span className="text-gray-700">Special Enrollment Help: Assistance after qualifying life events like losing job coverage, moving, having a baby, or turning 26.</span>
-                                </li>
-                                <li className="flex items-start">
-                                    <CheckCircle className="h-6 w-6 text-green-500 mt-1 mr-3 flex-shrink-0" />
-                                    <span className="text-gray-700">Bilingual Support: Available for families, gig workers, and small business owners with special enrollment period help.</span>
-                                </li>
-                            </ul>
-                        </motion.div>
-
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, amount: 0.6 }}
-                            transition={{ duration: 0.7, delay: 0.2 }}
-                            className="bg-white rounded-2xl p-8 shadow-soft hover:shadow-medium transition-all duration-300"
-                        >
-                            <div className="flex items-center justify-center w-16 h-16 bg-secondary-100 rounded-2xl mb-6">
-                                <FileText className="h-8 w-8 text-secondary-600" />
-                            </div>
-                            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                                Immigration & Notary Services
-                            </h3>
-                            <p className="text-gray-600 mb-6 leading-relaxed text-lg">
-                                Professional assistance with immigration forms, correspondence, and notary services for official document authentication.
-                            </p>
-                            <ul className="space-y-4">
-                                <li className="flex items-start">
-                                    <CheckCircle className="h-6 w-6 text-green-500 mt-1 mr-3 flex-shrink-0" />
-                                    <span className="text-gray-700">Immigration Form Assistance: Support with completing and organizing immigration-related forms and correspondence.</span>
-                                </li>
-                                <li className="flex items-start">
-                                    <CheckCircle className="h-6 w-6 text-green-500 mt-1 mr-3 flex-shrink-0" />
-                                    <span className="text-gray-700">Professional Notary Services: Licensed notaries verify identity, ensure voluntary signing, and affix official seals to certify authenticity.</span>
-                                </li>
-                                <li className="flex items-start">
-                                    <CheckCircle className="h-6 w-6 text-green-500 mt-1 mr-3 flex-shrink-0" />
-                                    <span className="text-gray-700">Document Authentication: We notarize a wide range of documents including Powers of Attorney, Affidavits, Contracts, and Real Estate Documents.</span>
-                                </li>
-                                <li className="flex items-start">
-                                    <CheckCircle className="h-6 w-6 text-green-500 mt-1 mr-3 flex-shrink-0" />
-                                    <span className="text-gray-700">Translation Services: Reliable translation and interpretation services between French and English for clear communication.</span>
-                                </li>
-                            </ul>
-                        </motion.div>
+                        {additionalServices.map((service, index) => {
+                            const IconComponent = service.icon
+                            return (
+                                <motion.div
+                                    key={service.title}
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, amount: 0.6 }}
+                                    transition={{ duration: 0.7, delay: index * 0.1 }}
+                                    className="bg-white rounded-2xl p-8 shadow-soft hover:shadow-medium transition-all duration-300"
+                                >
+                                    <div className={`flex items-center justify-center w-16 h-16 rounded-2xl mb-6 ${service.color === 'primary' ? 'bg-primary-100' :
+                                        service.color === 'secondary' ? 'bg-secondary-100' : 'bg-accent-100'
+                                        }`}>
+                                        <IconComponent className={`h-8 w-8 ${service.color === 'primary' ? 'text-primary-600' :
+                                            service.color === 'secondary' ? 'text-secondary-600' : 'text-accent-600'
+                                            }`} />
+                                    </div>
+                                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                                        {service.title}
+                                    </h3>
+                                    <p className="text-gray-600 mb-6 leading-relaxed text-lg">
+                                        {service.description}
+                                    </p>
+                                    <ul className="space-y-4">
+                                        {service.features.map((feature, featureIndex) => (
+                                            <li key={featureIndex} className="flex items-start">
+                                                <CheckCircle className="h-6 w-6 text-green-500 mt-1 mr-3 flex-shrink-0" />
+                                                <span className="text-gray-700">{feature}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </motion.div>
+                            )
+                        })}
                     </div>
                 </div>
             </section>
@@ -425,7 +403,7 @@ export default function ServicesPage() {
                                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                             </Link>
                             <a
-                                href="tel:770-882-4899"
+                                href="tel:+1-770-882-4899"
                                 className="btn-secondary group"
                             >
                                 Call Now

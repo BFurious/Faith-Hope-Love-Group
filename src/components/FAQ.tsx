@@ -15,7 +15,7 @@ const faqCategories = [
             },
             {
                 question: 'Do I need a license to operate an insurance agency?',
-                answer: 'Yes, each state requires agents and agencies to be licensed for specific lines of insurance.'
+                answer: 'Yes, each state requires agent and agencies to be licensed for specific lines of insurance.'
             },
             {
                 question: 'Can one agency sell multiple types of insurance?',

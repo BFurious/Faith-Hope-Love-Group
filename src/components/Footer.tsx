@@ -111,7 +111,7 @@ export default function Footer() {
                 'Hello, I would like to learn more about your insurance services.'
             )
         } else if (type === 'phone') {
-            window.location.href = emailService.getPhoneCallLink('770-882-4899')
+            window.location.href = emailService.getPhoneCallLink('+1-770-882-4899')
         }
     }
 
@@ -149,7 +149,7 @@ export default function Footer() {
                                     onClick={() => handleContactClick('phone')}
                                 >
                                     <Phone className="h-4 w-4 md:h-5 md:w-5 text-primary-400 flex-shrink-0" />
-                                    <span className="text-sm md:text-base">770-882-4899</span>
+                                    <span className="text-sm md:text-base">+1-770-882-4899</span>
                                 </div>
                                 <div
                                     className="flex items-center space-x-2 md:space-x-3 text-gray-300 hover:text-primary-400 transition-colors duration-300 cursor-pointer"

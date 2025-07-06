@@ -28,12 +28,12 @@ export default function EmailCTAExample() {
             icon: Phone,
             title: "Call Now",
             description: "Speak directly with our licensed insurance specialists.",
-            action: "Call 770-882-4899",
+            action: "Call +1-770-882-4899",
             color: "bg-gradient-to-br from-green-500 to-green-600",
             bgColor: "bg-green-50",
             iconColor: "text-white",
             type: "phone" as const,
-            target: "770-882-4899"
+            target: "+1-770-882-4899"
         },
         {
             icon: MessageSquare,

@@ -185,7 +185,7 @@ export default function ContactForm({
                 <div className="flex items-center justify-center gap-6 mb-8 p-4 bg-gray-50 rounded-2xl">
                     <div className="flex items-center text-sm text-gray-600">
                         <Shield className="h-4 w-4 mr-2 text-green-600" />
-                        <span>Licensed Agents</span>
+                        <span>Licensed agent</span>
                     </div>
                     <div className="flex items-center text-sm text-gray-600">
                         <Star className="h-4 w-4 mr-2 text-yellow-500" />

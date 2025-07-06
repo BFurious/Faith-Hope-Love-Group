@@ -47,7 +47,7 @@ const disclaimers = [
     {
         icon: CheckCircle,
         title: 'State Licensure',
-        content: 'Insurance services are only offered in jurisdictions where Faith Hope Love Agency and its agents are licensed. We do not solicit or sell insurance outside of those states.'
+        content: 'Insurance services are only offered in jurisdictions where Faith Hope Love Agency and its agent are licensed. We do not solicit or sell insurance outside of those states.'
     },
     {
         icon: FileText,
@@ -78,7 +78,7 @@ export default function Disclaimer() {
                     </h2>
                     <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
                         This website is a solicitation for insurance and is operated by Faith Hope Love Agency, a licensed insurance agency.
-                        Insurance products and services are provided through licensed agents authorized in the states where they conduct business.
+                        Insurance products and services are provided through licensed agent authorized in the states where they conduct business.
                     </p>
                 </motion.div>
 

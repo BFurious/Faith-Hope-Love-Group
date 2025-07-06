@@ -23,13 +23,14 @@ import {
 import ContactForm from './ContactForm'
 import ContactInfo from './ContactInfo'
 import CTACards from './CTACards'
+import { STATS } from './Hero'
 
 // Constants
 const CONTACT_INFO = [
     {
         icon: Phone,
         title: 'Call Today',
-        details: '770-882-4899',
+        details: '+1-770-882-4899',
         subtitle: 'Speak with a licensed insurance specialist',
         action: 'Call Now',
         type: 'phone' as const
@@ -45,7 +46,7 @@ const CONTACT_INFO = [
     {
         icon: MapPin,
         title: 'Georgia-Based',
-        details: 'Licensed Insurance Agents',
+        details: 'Licensed Insurance Agent',
         subtitle: 'Serving Georgia residents',
         action: 'Learn More',
         type: 'map' as const
@@ -56,7 +57,7 @@ const CTA_OPTIONS = [
     {
         icon: Quote,
         title: 'Get a Free Insurance Quote Today',
-        description: 'Protect what matters most. Use our secure form to request a no-obligation quote in minutes. Our licensed agents will help you compare your options and find the coverage that fits your needs and budget.',
+        description: 'Protect what matters most. Use our secure form to request a no-obligation quote in minutes. Our licensed agent will help you compare your options and find the coverage that fits your needs and budget.',
         action: 'Start My Free Quote',
         color: 'from-blue-500 to-blue-600',
         bgColor: 'bg-blue-50',
@@ -74,7 +75,7 @@ const CTA_OPTIONS = [
     {
         icon: UserCheck,
         title: 'Speak with a Licensed Insurance Specialist',
-        description: 'Our Georgia-based agents are standing by to help you find the right protection. Call us today or click below to get started with expert advice tailored to your situation.',
+        description: 'Our Georgia-based agent are standing by to help you find the right protection. Call us today or click below to get started with expert advice tailored to your situation.',
         action: 'Protect My Family Today',
         color: 'from-green-500 to-green-600',
         bgColor: 'bg-green-50',
@@ -84,11 +85,10 @@ const CTA_OPTIONS = [
 
 const BENEFITS = [
     'No-obligation quotes',
-    'Licensed Georgia agents',
+    'Licensed Georgia agent',
     '24/7 emergency support',
     'Personalized coverage',
-    'Competitive rates',
-    'Fast claims processing'
+    'Competitive rates'
 ]
 
 const INSURANCE_TYPES = [
@@ -100,12 +100,7 @@ const INSURANCE_TYPES = [
     { name: 'Travel Insurance', icon: '✈️', description: 'Safe travels with peace of mind' }
 ]
 
-const STATS = [
-    { value: '50,000+', label: 'Families Protected', icon: Heart },
-    { value: '99.8%', label: 'Claims Approved', icon: Award },
-    { value: '24/7', label: 'Emergency Support', icon: Shield },
-    { value: '15min', label: 'Average Response', icon: Zap }
-]
+
 
 // Reusable Components
 const BackgroundElements = () => (
@@ -183,20 +178,20 @@ export const EmergencyContactSection = ({ inView }: { inView: boolean }) => (
                 <h4 className="text-2xl font-bold">24/7 Emergency Claims Support</h4>
             </div>
             <p className="text-red-100 mb-8 text-lg leading-relaxed max-w-3xl">
-                Accidents happen anytime. Our emergency claims line is available 24/7 to help you when you need it most.
-                Don't wait - get the support you need immediately.
+                Accidents happen anytime.
+                Don't wait - get the claim support you need immediately.
             </p>
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
                 <a
-                    href="tel:770-882-4899"
+                    href="tel:+1-770-882-4899"
                     className="inline-flex items-center bg-white text-red-600 font-semibold px-6 py-3 rounded-xl hover:bg-red-50 transition-all duration-300 group"
                 >
                     <Phone className="h-5 w-5 mr-2" />
-                    770-882-4899
+                    +1-770-882-4899
                     <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </a>
                 <div className="text-red-100 text-sm">
-                    <p>Available 24/7 for emergency claims</p>
+                    <p>Available 24/7 for emergency claim support</p>
                     <p>Immediate assistance guaranteed</p>
                 </div>
             </div>
@@ -243,7 +238,7 @@ export default function Contact() {
                     </h1>
 
                     <p className="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-12">
-                        Start your journey with Faith Hope Love Group. Our Georgia-based agents are here to help you find the right protection.
+                        Start your journey with Faith Hope Love Group. Our Georgia-based agent are here to help you find the right protection.
                     </p>
 
                     {/* Stats Section */}

@@ -1,5 +1,6 @@
 'use client'
 
+import React from 'react'
 import { motion, LazyMotion, domAnimation, m, inView } from 'framer-motion'
 import { Shield, Star, Users, Award, ChevronRight, Play, Check, Zap, Heart, TrendingUp, ArrowRight, CheckCircle2 } from 'lucide-react'
 import { useState, useEffect, Suspense, lazy, useCallback, useMemo } from 'react'
@@ -7,20 +8,17 @@ import Image from 'next/image'
 import LazyAnimations from './LazyAnimations'
 
 // Constants - Moved to top for better organization
-const STATS = [
-    { icon: Users, value: '50K+', label: 'Families Protected', description: 'Sleep peacefully' },
-    { icon: Shield, value: '99.9%', label: 'Claims Approved', description: 'We say YES' },
+export const STATS = [
+    { icon: Users, value: '90%', label: 'Protection Guaranteed', description: 'Sleep peacefully' },
     { icon: Star, value: '4.9★', label: 'Customer Rating', description: 'Highest rated' },
-    { icon: Award, value: '72hrs', label: 'Claim Processing', description: 'Lightning fast' },
+    { icon: Award, value: '24hrs', label: 'Claim Processing', description: 'Lightning fast' },
+    { icon: Zap, value: '15min', label: 'Average Response', description: 'Fast and Reliable' },
 ]
 
 const TRUST_INDICATORS = [
     '💰 Instant Quotes in 30 Seconds',
-    '🛡️ A+ Rated by Better Business Bureau',
-    '⚡ No Medical Exams Required',
     '🎯 Save Up to 40% vs Competitors',
-    '📞 24/7 Emergency Claim Hotline',
-    '✅ 30-Day Money-Back Guarantee'
+    '📞 24/7 Emergency Claim Hotline'
 ]
 
 const URGENCY_MESSAGES = [
@@ -43,22 +41,6 @@ const fadeIn = {
     transition: { duration: 0.4 }
 }
 
-// Reusable components for better maintainability
-const TrustBadge = () => (
-    <m.div
-        {...fadeInUp}
-        className="inline-flex items-center px-3 sm:px-4 md:px-6 py-2 sm:py-3 bg-gradient-to-r from-green-100 to-blue-100 rounded-full border border-green-300 sm:border-2 shadow-lg mx-auto lg:mx-0"
-        role="banner"
-        aria-label="Trust indicators"
-    >
-        <Shield className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 text-green-600 mr-1 sm:mr-2 animate-pulse flex-shrink-0" />
-        <span className="text-green-800 text-xs sm:text-sm md:text-base font-bold sm:font-black leading-tight">
-            <span className="hidden sm:inline">🏆 #1 RATED INSURANCE • TRUSTED SINCE 1998 • A+ BBB RATING</span>
-            <span className="sm:hidden">🏆 #1 RATED • TRUSTED • A+ BBB</span>
-        </span>
-    </m.div>
-)
-
 const MainHeadline = () => (
     <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black leading-[0.9] sm:leading-tight tracking-tight">
         <span className="text-gray-900 block">Don't Let</span>
@@ -72,7 +54,7 @@ const MainHeadline = () => (
     </h1>
 )
 
-const CompellingSubheadline = ({ customerCount }: { customerCount: number }) => (
+const CompellingSubheadline = ({ customerCount, scrollToContact }: { customerCount: number; scrollToContact: () => void }) => (
     <m.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -127,25 +109,10 @@ const CompellingSubheadline = ({ customerCount }: { customerCount: number }) => 
                     </p>
                 </div>
 
-                {/* Trust indicators with icons */}
-                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 text-sm sm:text-base">
-                    <div className="flex items-center space-x-1 bg-white/80 rounded-full px-3 py-2 shadow-sm">
-                        <Shield className="h-4 w-4 text-green-600" />
-                        <span className="text-green-700 font-semibold">Instant Protection</span>
-                    </div>
-                    <div className="flex items-center space-x-1 bg-white/80 rounded-full px-3 py-2 shadow-sm">
-                        <Check className="h-4 w-4 text-blue-600" />
-                        <span className="text-blue-700 font-semibold">No Medical Exam</span>
-                    </div>
-                    <div className="flex items-center space-x-1 bg-white/80 rounded-full px-3 py-2 shadow-sm">
-                        <Star className="h-4 w-4 text-yellow-600" />
-                        <span className="text-yellow-700 font-semibold">A+ Rated</span>
-                    </div>
-                </div>
-
                 {/* Call to action with enhanced visual appeal */}
-                <div className="mt-4 sm:mt-5 text-center lg:text-left" onClick={scrollToContact}>
+                <div className="mt-4 sm:mt-5 text-center lg:text-left" >
                     <m.button
+                        onClick={scrollToContact}
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                         className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-6 py-3 rounded-xl font-bold text-sm sm:text-base shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
@@ -155,7 +122,7 @@ const CompellingSubheadline = ({ customerCount }: { customerCount: number }) => 
                             <ArrowRight className="h-4 w-4 animate-pulse" />
                         </span>
                     </m.button>
-                    <p className="text-xs text-gray-500 mt-2">⚡ Takes only 30 seconds • 💰 Save up to 40%</p>
+                    <p className="text-xs text-gray-500 mt-2">⚡ Takes only 30 seconds • 💰 Put Cash Back in Your Pocket</p>
                 </div>
             </div>
         </div>
@@ -193,28 +160,6 @@ const TrustIndicators = () => (
 
 const StatsGrid = ({ stats }: { stats: typeof STATS }) => (
     <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 border border-green-200 shadow-lg max-w-2xl mx-auto lg:max-w-none">
-        <div className="text-center sm:text-left mb-3 sm:mb-4">
-            <div className="flex items-center justify-center lg:justify-start space-x-2 sm:space-x-3 md:space-x-4 mb-2 sm:mb-3">
-                <div className="flex -space-x-1 sm:-space-x-2" role="group" aria-label="Recent customers">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                        <Image
-                            key={i}
-                            src={`https://images.unsplash.com/photo-149479010875${i}-2616b612b786?w=32&h=32&fit=crop&crop=face`}
-                            alt={`Customer ${i}`}
-                            width={32}
-                            height={32}
-                            className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full border-2 border-white shadow-sm flex-shrink-0"
-                            loading="lazy"
-                            quality={75}
-                        />
-                    ))}
-                </div>
-                <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-500 rounded-full animate-pulse flex-shrink-0" aria-hidden="true"></div>
-                <span className="text-xs sm:text-sm md:text-base font-bold text-green-700">
-                    <span className="text-green-600">{Math.floor(Math.random() * 20) + 5}</span> people got protected in the last hour
-                </span>
-            </div>
-        </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4" role="list" aria-label="Company statistics">
             {stats.map((stat, index) => (
@@ -237,20 +182,6 @@ const StatsGrid = ({ stats }: { stats: typeof STATS }) => (
     </div>
 )
 
-const MoneyBackGuarantee = () => (
-    <div className="bg-yellow-100 border-2 border-yellow-400 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-5 shadow-lg max-w-lg mx-auto lg:max-w-none">
-        <div className="flex items-center justify-center lg:justify-start space-x-2 sm:space-x-3">
-            <div className="bg-yellow-500 text-white p-1.5 sm:p-2 rounded-full flex-shrink-0" aria-hidden="true">
-                <Check className="h-4 w-4 sm:h-5 sm:w-5" />
-            </div>
-            <div className="text-center lg:text-left">
-                <div className="font-black text-yellow-800 text-sm sm:text-base md:text-lg">30-Day Money-Back Guarantee</div>
-                <div className="text-yellow-700 text-xs sm:text-sm">Not satisfied? Get 100% refund, no questions asked!</div>
-            </div>
-        </div>
-    </div>
-)
-
 const UrgencyBanner = ({ currentMessage }: { currentMessage: string }) => (
     <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-red-600 to-orange-600 text-white py-2 sm:py-3 z-20" role="banner" aria-label="Urgency message">
         <div className="container mx-auto px-3 sm:px-4">
@@ -262,18 +193,8 @@ const UrgencyBanner = ({ currentMessage }: { currentMessage: string }) => (
     </div>
 )
 
-const scrollToContact = () => {
-    const contactSection = document.getElementById('contact')
-    if (contactSection) {
-        contactSection.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        })
-    }
-}
+export const HeroCTASection = ({ inView, enableAnimations, scrollToContact }: { inView: boolean; enableAnimations: boolean; scrollToContact: () => void }) => {
 
-export const HeroCTASection = ({ inView, enableAnimations }: { inView: boolean; enableAnimations: boolean }) => {
-    
 
     return (
         <motion.div
@@ -314,9 +235,8 @@ export const HeroCTASection = ({ inView, enableAnimations }: { inView: boolean; 
                 className="absolute -top-6 -right-6 sm:-top-8 sm:-right-8 md:-top-10 md:-right-10 lg:-top-12 lg:-right-12 bg-gradient-to-r from-emerald-500 via-green-500 to-emerald-600 text-white p-3 sm:p-4 md:p-5 lg:p-6 rounded-xl sm:rounded-2xl md:rounded-3xl shadow-2xl sm:shadow-3xl max-w-[160px] sm:max-w-[180px] md:max-w-[220px] z-30 border-2 border-white/20 backdrop-blur-sm"
             >
                 <div className="text-center">
-                    <div className="text-sm sm:text-base font-bold mb-1">⚡ Instant Quote</div>
-                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-black">30 Seconds</div>
-                    <div className="text-xs text-emerald-100 mt-1">Lightning Fast</div>
+                    <div className="text-sm sm:text-base font-bold mb-1">⚡ High Chances</div>
+                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-black">of Approval</div>
                 </div>
             </m.div>
 
@@ -346,12 +266,11 @@ export const HeroCTASection = ({ inView, enableAnimations }: { inView: boolean; 
                         delay: 3
                     } : { duration: 0 }
                 }}
-                className="absolute -bottom-6 -left-6 sm:-bottom-8 sm:-left-8 md:-bottom-10 md:-left-10 lg:-bottom-12 lg:-left-12 bg-gradient-to-r from-violet-500 via-purple-500 to-violet-600 text-white p-3 sm:p-4 md:p-5 lg:p-6 rounded-xl sm:rounded-2xl md:rounded-3xl shadow-2xl sm:shadow-3xl max-w-[160px] sm:max-w-[180px] md:max-w-[220px] z-30 border-2 border-white/20 backdrop-blur-sm"
+                className="absolute -bottom-6 -left-6 sm:-bottom-8 sm:-left-8 md:-bottom-10 md:-left-10 lg:-bottom-16 lg:-left-12 bg-gradient-to-r from-violet-500 via-purple-500 to-violet-600 text-white p-3 sm:p-4 md:p-5 lg:p-6 rounded-xl sm:rounded-2xl md:rounded-3xl shadow-2xl sm:shadow-3xl max-w-[160px] sm:max-w-[180px] md:max-w-[220px] z-30 border-2 border-white/20 backdrop-blur-sm"
             >
                 <div className="text-center">
                     <div className="text-sm sm:text-base font-bold mb-1">🛡️ No Obligation</div>
                     <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-black">100% Free</div>
-                    <div className="text-xs text-violet-100 mt-1">Zero Risk</div>
                 </div>
             </m.div>
 
@@ -385,7 +304,7 @@ export const HeroCTASection = ({ inView, enableAnimations }: { inView: boolean; 
 
                 {/* Enhanced Benefits with staggered animation */}
                 <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3" role="group" aria-label="Process benefits">
-                    {['No obligation', 'Licensed agents', 'Instant quotes'].map((text, index) => (
+                    {['No obligation', 'Licensed agent', 'Instant quotes'].map((text, index) => (
                         <m.div
                             key={text}
                             initial={{ opacity: 0, y: 20 }}
@@ -432,7 +351,6 @@ export const HeroCTASection = ({ inView, enableAnimations }: { inView: boolean; 
                             Start Now
                             <ArrowRight className="ml-3 h-5 w-5 transition-transform group-hover:translate-x-2" aria-hidden="true" />
                         </m.button>
-                        <p className="text-blue-100 text-xs mt-2">No credit card required</p>
                     </div>
                 </m.div>
             </div>
@@ -456,6 +374,17 @@ export default function Hero() {
 
     const updateCustomerCount = useCallback(() => {
         setCustomerCount(prev => prev + Math.floor(Math.random() * 3) + 1)
+    }, [])
+
+    // Scroll to contact function
+    const scrollToContact = useCallback(() => {
+        const contactSection = document.getElementById('contact')
+        if (contactSection) {
+            contactSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            })
+        }
     }, [])
 
     // Enable animations after initial load for better performance
@@ -502,12 +431,10 @@ export default function Hero() {
 
                             {/* First Column - Content */}
                             <div className="space-y-4 sm:space-y-6 md:space-y-8 text-center lg:text-left">
-                                <TrustBadge />
                                 <MainHeadline />
-                                <CompellingSubheadline customerCount={customerCount} />
+                                <CompellingSubheadline customerCount={customerCount} scrollToContact={scrollToContact} />
                                 <TrustIndicators />
                                 <StatsGrid stats={STATS} />
-                                <MoneyBackGuarantee />
                             </div>
 
                             {/* Second Column - Visual Card and CTA */}
@@ -549,7 +476,7 @@ export default function Hero() {
 
                                                 <div>
                                                     <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-gray-900 mb-1 sm:mb-2 leading-tight">
-                                                        🛡️ TOTAL LIFE PROTECTION
+                                                        🛡️ TOTAL PROTECTION
                                                     </h3>
                                                     <p className="text-gray-600 text-sm sm:text-base md:text-lg font-semibold">
                                                         Auto • Home • Life • Health • Business
@@ -567,9 +494,9 @@ export default function Hero() {
                                                 <div className="bg-green-100 border-2 border-green-300 rounded-lg sm:rounded-xl p-3 sm:p-4">
                                                     <div className="text-center">
                                                         <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-green-600 mb-1">
-                                                            ${(customerCount * 47).toLocaleString()}
+                                                            Full Protection
                                                         </div>
-                                                        <div className="text-green-700 font-bold text-xs sm:text-sm">Paid Out This Month</div>
+                                                        <div className="text-green-700 font-bold text-xs sm:text-sm">For All That Matters To You</div>
                                                         <div className="flex items-center justify-center mt-1 sm:mt-2">
                                                             <Heart className="h-3 w-3 sm:h-4 sm:w-4 text-red-500 animate-pulse mr-1" aria-hidden="true" />
                                                             <span className="text-xs text-green-600">Lives Changed Forever</span>
@@ -604,12 +531,12 @@ export default function Hero() {
                                                     delay: 1.5
                                                 } : { duration: 0 }
                                             }}
-                                            className="absolute -top-2 -left-2 sm:-top-3 sm:-left-3 md:-top-4 md:-left-4 lg:-top-6 lg:-left-6 bg-gradient-to-r from-green-500 to-green-600 text-white p-2 sm:p-3 md:p-4 lg:p-5 rounded-lg sm:rounded-xl md:rounded-2xl shadow-xl sm:shadow-2xl max-w-[140px] sm:max-w-[160px] md:max-w-[200px]"
+                                            className="absolute -top-12 -left-12 sm:-top-13 sm:-left-13 md:-top-8 md:-left-4 lg:-top-16 lg:-left-6 bg-gradient-to-r from-green-500 to-green-600 text-white p-2 sm:p-3 md:p-4 lg:p-5 rounded-lg sm:rounded-xl md:rounded-2xl shadow-xl sm:shadow-2xl max-w-[140px] sm:max-w-[160px] md:max-w-[200px]"
                                             role="complementary"
-                                            aria-label="Instant approval offer"
+                                            aria-label="Full Protection"
                                         >
-                                            <div className="text-xs sm:text-sm font-bold">✅ Instant Approval</div>
-                                            <div className="text-sm sm:text-base md:text-lg lg:text-xl font-black">Save $2,400/year</div>
+                                            <div className="text-xs sm:text-sm font-bold">🛡️ Full Protection</div>
+                                            <div className="text-sm sm:text-base md:text-lg lg:text-xl font-black">For All That Matters To You</div>
                                         </m.div>
 
                                         <m.div
@@ -636,44 +563,12 @@ export default function Hero() {
                                                     delay: 2
                                                 } : { duration: 0 }
                                             }}
-                                            className="absolute -bottom-2 -right-2 sm:-bottom-3 sm:-right-3 md:-bottom-4 md:-right-4 lg:-bottom-6 lg:-right-6 bg-gradient-to-r from-purple-500 to-purple-600 text-white p-2 sm:p-3 md:p-4 lg:p-5 rounded-lg sm:rounded-xl md:rounded-2xl shadow-xl sm:shadow-2xl max-w-[140px] sm:max-w-[160px] md:max-w-[200px]"
+                                            className="absolute -bottom-2 -right-2 sm:-bottom-3 sm:-right-3 md:-bottom-8 md:-right-4 lg:-bottom-12 lg:-right-6 bg-gradient-to-r from-purple-500 to-purple-600 text-white p-2 sm:p-3 md:p-4 lg:p-5 rounded-lg sm:rounded-xl md:rounded-2xl shadow-xl sm:shadow-2xl max-w-[140px] sm:max-w-[160px] md:max-w-[200px]"
                                             role="complementary"
-                                            aria-label="Emergency claims hotline"
+                                            aria-label="Emergency claims support"
                                         >
-                                            <div className="text-xs sm:text-sm font-bold">🚨 Emergency Claims</div>
+                                            <div className="text-xs sm:text-sm font-bold">🚨 Emergency Claims Support</div>
                                             <div className="text-sm sm:text-base md:text-lg lg:text-xl font-black">24/7 Hotline</div>
-                                        </m.div>
-
-                                        <m.div
-                                            initial={{ opacity: 0, scale: 0.8 }}
-                                            animate={{
-                                                opacity: 1,
-                                                scale: enableAnimations ? [1, 1.05, 1] : 1,
-                                                x: enableAnimations ? [0, 5, 0] : 0
-                                            }}
-                                            transition={{
-                                                opacity: { duration: 0.5, delay: 0.6 },
-                                                scale: enableAnimations ? {
-                                                    duration: 4.5,
-                                                    ease: "easeInOut",
-                                                    repeat: Infinity,
-                                                    delay: 1.2
-                                                } : { duration: 0.5, delay: 0.6 },
-                                                x: enableAnimations ? {
-                                                    duration: 4.5,
-                                                    ease: "easeInOut",
-                                                    repeat: Infinity,
-                                                    delay: 1.2
-                                                } : { duration: 0 }
-                                            }}
-                                            className="absolute top-1/2 -right-4 sm:-right-6 md:-right-8 lg:-right-12 bg-gradient-to-r from-orange-500 to-red-500 text-white p-2 sm:p-3 md:p-4 rounded-lg sm:rounded-xl shadow-lg sm:shadow-xl"
-                                            role="complementary"
-                                            aria-label="Claims increase indicator"
-                                        >
-                                            <div className="text-center">
-                                                <TrendingUp className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 lg:h-8 lg:w-8 mx-auto mb-1" aria-hidden="true" />
-                                                <div className="text-xs sm:text-sm font-black whitespace-nowrap">Claims Up 300%</div>
-                                            </div>
                                         </m.div>
                                     </m.div>
                                 </div>
@@ -700,10 +595,10 @@ export default function Hero() {
                                         },
                                         scale: { duration: 0.6, delay: 0.8 }
                                     }}
-                                    className="relative z-20 max-w-md mx-auto lg:max-w-none -mt-12 sm:-mt-16 md:-mt-20 lg:-mt-24"
+                                    className="relative z-20 max-w-md mx-auto lg:max-w-none -mt-14 sm:-mt-16 md:-mt-20 lg:-mt-12"
                                 >
                                     <div className="bg-gradient-to-br from-white via-blue-50 to-purple-50 rounded-2xl sm:rounded-3xl md:rounded-[2rem] shadow-xl sm:shadow-2xl p-4 sm:p-6 md:p-8 lg:p-10 border border-white/50 backdrop-blur-lg relative">
-                                        <HeroCTASection inView={true} enableAnimations={enableAnimations} />
+                                        <HeroCTASection inView={true} enableAnimations={enableAnimations} scrollToContact={scrollToContact} />
                                     </div>
                                 </m.div>
                             </div>

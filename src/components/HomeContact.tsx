@@ -10,7 +10,7 @@ const contactInfo = [
     {
         icon: Phone,
         title: 'Call Today',
-        details: '770-882-4899',
+        details: '+1-770-882-4899',
         subtitle: 'Speak with a licensed insurance specialist',
         action: 'Call Now',
         type: 'phone'
@@ -26,7 +26,7 @@ const contactInfo = [
     {
         icon: MapPin,
         title: 'Georgia-Based',
-        details: 'Licensed Insurance Agents',
+        details: 'Licensed Insurance agent',
         subtitle: 'Serving Georgia residents',
         action: 'Learn More',
         type: 'map'
@@ -63,7 +63,7 @@ export default function HomeContact() {
                     </h2>
 
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                        Start your journey with Faith Hope Love Group. Our Georgia-based agents are here to help you find the right protection.
+                        Start your journey with Faith Hope Love Group. Our Georgia-based agent are here to help you find the right protection.
                     </p>
                 </motion.div>
 
@@ -105,7 +105,7 @@ export default function HomeContact() {
                                 </div>
                                 <h4 className="text-xl font-semibold mb-3">Get Your Free Quote in Minutes</h4>
                                 <p className="text-blue-100 mb-6">
-                                    No commitment required. Our licensed agents will help you find the perfect coverage for your needs and budget.
+                                    No commitment required. Our licensed agent will help you find the perfect coverage for your needs and budget.
                                 </p>
                                 <div className="flex items-center justify-between">
                                     <div className="flex items-center space-x-4">
@@ -115,7 +115,7 @@ export default function HomeContact() {
                                         </div>
                                         <div className="flex items-center">
                                             <CheckCircle2 className="h-5 w-5 mr-2" />
-                                            <span className="text-sm">Licensed agents</span>
+                                            <span className="text-sm">Licensed agent</span>
                                         </div>
                                     </div>
                                     <button className="bg-white text-blue-600 px-6 py-3 rounded-xl font-semibold hover:bg-blue-50 transition-colors duration-300">
@@ -145,11 +145,10 @@ export default function HomeContact() {
                             <div className="grid grid-cols-2 gap-3">
                                 {[
                                     'No-obligation quotes',
-                                    'Licensed Georgia agents',
+                                    'Licensed Georgia agent',
                                     '24/7 emergency support',
                                     'Personalized coverage',
                                     'Competitive rates',
-                                    'Fast claims processing'
                                 ].map((benefit, index) => (
                                     <div key={benefit} className="flex items-center space-x-2">
                                         <CheckCircle2 className="h-4 w-4 text-green-500 flex-shrink-0" />

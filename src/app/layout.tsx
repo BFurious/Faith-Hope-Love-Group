@@ -1,3 +1,4 @@
+import React from 'react'
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { Metadata, Viewport } from 'next'
@@ -30,11 +31,11 @@ export const metadata: Metadata = {
         default: 'Hope Faith Love Group - #1 Rated Insurance Protection | Save 40% Today',
         template: '%s | Hope Faith Love Group Insurance'
     },
-    description: 'Don\'t let disaster destroy your life! Get complete insurance protection in 30 seconds. 50K+ families protected. 99.9% claims approved. A+ BBB rated. Save up to 40% vs competitors.',
+    description: 'Don\'t let disaster destroy your life! Get complete insurance protection in 30 seconds.',
     keywords: [
         'insurance', 'life insurance', 'auto insurance', 'home insurance',
         'health insurance', 'business insurance', 'cheap insurance',
-        'best insurance rates', 'insurance quotes', 'fast claims',
+        'best insurance rates', 'insurance quotes',
         'hope faith love group', 'family protection', 'insurance coverage'
     ],
     authors: [{ name: 'Hope Faith Love Group' }],
@@ -54,7 +55,7 @@ export const metadata: Metadata = {
         url: 'https://hopefaithlovegroup.com',
         siteName: 'Hope Faith Love Group',
         title: 'Hope Faith Love Group - #1 Rated Insurance Protection',
-        description: 'Don\'t let disaster destroy your life! Get complete insurance protection in 30 seconds. 99.9% claims approved.',
+        description: 'Don\'t let disaster destroy your life! Get complete insurance protection in 30 seconds.',
         images: [
             {
                 url: '/og-image.jpg',
@@ -113,7 +114,7 @@ const jsonLd = {
     "name": "Hope Faith Love Group",
     "url": "https://hopefaithlovegroup.com",
     "logo": "https://hopefaithlovegroup.com/logo.png",
-    "description": "Complete insurance protection for auto, home, life, health, and business. A+ BBB rated with 99.9% claims approval rate.",
+    "description": "Complete insurance protection for auto, home, life, health, and business.",
     "address": {
         "@type": "PostalAddress",
         "addressCountry": "US"
