@@ -11,7 +11,7 @@ import LazyAnimations from './LazyAnimations'
 export const STATS = [
     { icon: Users, value: '90%', label: 'Protection Guaranteed', description: 'Sleep peacefully' },
     { icon: Star, value: '4.9★', label: 'Customer Rating', description: 'Highest rated' },
-    { icon: Award, value: '24hrs', label: 'Claim Processing', description: 'Lightning fast' },
+    { icon: Award, value: '24hrs', label: 'Turn Around', description: 'Lightning fast' },
     { icon: Zap, value: '15min', label: 'Average Response', description: 'Fast and Reliable' },
 ]
 
@@ -42,13 +42,13 @@ const fadeIn = {
 }
 
 const MainHeadline = () => (
-    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black leading-[0.9] sm:leading-tight tracking-tight">
+    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black leading-tight sm:leading-[0.9] tracking-tight">
         <span className="text-gray-900 block">Don't Let</span>
-        <span className="bg-gradient-to-r from-red-600 via-orange-500 to-red-600 bg-clip-text text-transparent animate-pulse block mt-1 sm:mt-2">
+        <span className="bg-gradient-to-r from-red-600 via-orange-500 to-red-600 bg-clip-text text-transparent animate-pulse block mt-0.5 sm:mt-1">
             DISASTER
         </span>
-        <span className="text-gray-900 block mt-1 sm:mt-2">Destroy Your</span>
-        <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent block mt-1 sm:mt-2">
+        <span className="text-gray-900 block mt-0.5 sm:mt-1">Destroy Your</span>
+        <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent block mt-0.5 sm:mt-1">
             LIFE
         </span>
     </h1>
@@ -62,30 +62,30 @@ const CompellingSubheadline = ({ customerCount, scrollToContact }: { customerCou
         className="relative group"
     >
         {/* Background with enhanced visual appeal */}
-        <div className="bg-gradient-to-br from-white/95 via-blue-50/90 to-purple-50/90 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 shadow-2xl border border-white/50 relative overflow-hidden">
+        <div className="bg-gradient-to-br from-white/95 via-blue-50/90 to-purple-50/90 backdrop-blur-xl rounded-xl sm:rounded-2xl md:rounded-3xl p-3 sm:p-4 md:p-6 lg:p-8 shadow-xl sm:shadow-2xl border border-white/50 relative overflow-hidden">
             {/* Animated background elements */}
             <div className="absolute inset-0 bg-gradient-to-r from-red-500/5 via-orange-500/5 to-red-500/5 animate-pulse" />
-            <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-red-500/10 to-orange-500/10 rounded-full blur-xl" />
-            <div className="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-br from-green-500/10 to-blue-500/10 rounded-full blur-xl" />
+            <div className="absolute top-0 right-0 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-red-500/10 to-orange-500/10 rounded-full blur-xl" />
+            <div className="absolute bottom-0 left-0 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-green-500/10 to-blue-500/10 rounded-full blur-xl" />
 
             {/* Main content with enhanced typography and visual hierarchy */}
             <div className="relative z-10">
                 {/* Urgency indicator */}
-                <div className="flex items-center justify-center lg:justify-start mb-3 sm:mb-4">
-                    <div className="flex items-center space-x-2 bg-red-100 border-2 border-red-300 rounded-full px-3 py-1 animate-pulse">
-                        <div className="w-2 h-2 bg-red-500 rounded-full animate-ping" />
+                <div className="flex items-center justify-center lg:justify-start mb-2 sm:mb-3">
+                    <div className="flex items-center space-x-1 sm:space-x-2 bg-red-100 border-2 border-red-300 rounded-full px-2 py-1 sm:px-3 animate-pulse">
+                        <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500 rounded-full animate-ping" />
                         <span className="text-red-700 text-xs font-bold">URGENT</span>
                     </div>
                 </div>
 
                 {/* Main headline with emotional impact */}
-                <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-gray-900 leading-tight font-bold sm:font-black mb-3 sm:mb-4 text-center lg:text-left">
+                <h2 className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-900 leading-tight font-bold sm:font-black mb-2 sm:mb-3 text-center lg:text-left">
                     <span className="text-red-600 relative">
                         Every 7 seconds
                         <m.span
                             animate={{ scale: [1, 1.1, 1] }}
                             transition={{ duration: 2, repeat: Infinity, delay: 1 }}
-                            className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full"
+                            className="absolute -top-0.5 -right-0.5 sm:-top-1 sm:-right-1 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500 rounded-full"
                         />
                     </span>
                     <span className="block sm:inline">, a family loses</span>
@@ -94,15 +94,15 @@ const CompellingSubheadline = ({ customerCount, scrollToContact }: { customerCou
                 </h2>
 
                 {/* Solution with visual emphasis */}
-                <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-4 sm:p-5 mb-4 sm:mb-5 border-l-4 border-green-500">
-                    <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-800 leading-relaxed font-semibold text-center lg:text-left">
+                <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg sm:rounded-xl p-3 sm:p-4 mb-3 sm:mb-4 border-l-4 border-green-500">
+                    <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-800 leading-relaxed font-semibold text-center lg:text-left">
                         <span className="text-green-600 font-bold">Don't be next!</span>
                         <span className="block sm:inline"> Get protected in just </span>
                         <span className="text-blue-600 font-black underline decoration-2 decoration-blue-400 hover:decoration-blue-600 transition-all duration-300 cursor-pointer">
                             30 seconds
                         </span>
                         <span className="block sm:inline"> and join </span>
-                        <span className="text-purple-600 font-black bg-purple-100 px-2 py-1 rounded-lg">
+                        <span className="text-purple-600 font-black bg-purple-100 px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-md sm:rounded-lg text-xs sm:text-sm">
                             {customerCount.toLocaleString()}+ families
                         </span>
                         <span className="block sm:inline"> who sleep peacefully every night.</span>
@@ -110,16 +110,16 @@ const CompellingSubheadline = ({ customerCount, scrollToContact }: { customerCou
                 </div>
 
                 {/* Call to action with enhanced visual appeal */}
-                <div className="mt-4 sm:mt-5 text-center lg:text-left" >
+                <div className="mt-3 sm:mt-4 text-center lg:text-left" >
                     <m.button
                         onClick={scrollToContact}
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-6 py-3 rounded-xl font-bold text-sm sm:text-base shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                        className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-4 py-2.5 sm:px-6 sm:py-3 rounded-lg sm:rounded-xl font-bold text-sm sm:text-base shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 w-full sm:w-auto"
                     >
                         <span className="flex items-center justify-center space-x-2">
                             <span>Get Protected Now</span>
-                            <ArrowRight className="h-4 w-4 animate-pulse" />
+                            <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 animate-pulse" />
                         </span>
                     </m.button>
                     <p className="text-xs text-gray-500 mt-2">⚡ Takes only 30 seconds • 💰 Put Cash Back in Your Pocket</p>
@@ -127,11 +127,11 @@ const CompellingSubheadline = ({ customerCount, scrollToContact }: { customerCou
             </div>
         </div>
 
-        {/* Floating elements for visual interest */}
+        {/* Floating elements for visual interest - smaller on mobile */}
         <m.div
-            animate={{ y: [0, -10, 0] }}
+            animate={{ y: [0, -8, 0] }}
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -top-2 -right-2 bg-yellow-400 text-yellow-900 px-2 py-1 rounded-full text-xs font-bold shadow-lg"
+            className="absolute -top-1.5 -right-1.5 sm:-top-2 sm:-right-2 bg-yellow-400 text-yellow-900 px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-full text-xs font-bold shadow-lg"
         >
             ⚡ LIVE
         </m.div>
@@ -139,7 +139,7 @@ const CompellingSubheadline = ({ customerCount, scrollToContact }: { customerCou
         <m.div
             animate={{ rotate: [0, 5, 0, -5, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -bottom-2 -left-2 bg-green-400 text-white px-2 py-1 rounded-full text-xs font-bold shadow-lg"
+            className="absolute -bottom-1.5 -left-1.5 sm:-bottom-2 sm:-left-2 bg-green-400 text-white px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-full text-xs font-bold shadow-lg"
         >
             🛡️ SECURE
         </m.div>
@@ -147,10 +147,10 @@ const CompellingSubheadline = ({ customerCount, scrollToContact }: { customerCou
 )
 
 const TrustIndicators = () => (
-    <div className="overflow-hidden bg-white/80 rounded-lg sm:rounded-xl py-3 sm:py-4 shadow-md sm:shadow-lg" role="region" aria-label="Trust indicators">
-        <div className="flex space-x-4 sm:space-x-6 md:space-x-8 whitespace-nowrap animate-scroll">
+    <div className="overflow-hidden bg-white/80 rounded-lg sm:rounded-xl py-2 sm:py-3 shadow-md sm:shadow-lg" role="region" aria-label="Trust indicators">
+        <div className="flex space-x-3 sm:space-x-4 md:space-x-6 whitespace-nowrap animate-scroll">
             {[...TRUST_INDICATORS, ...TRUST_INDICATORS].map((indicator, index) => (
-                <span key={index} className="text-xs sm:text-sm md:text-base font-medium sm:font-semibold text-gray-700 flex items-center flex-shrink-0">
+                <span key={index} className="text-xs sm:text-sm font-medium sm:font-semibold text-gray-700 flex items-center flex-shrink-0">
                     {indicator}
                 </span>
             ))}
@@ -159,23 +159,22 @@ const TrustIndicators = () => (
 )
 
 const StatsGrid = ({ stats }: { stats: typeof STATS }) => (
-    <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 border border-green-200 shadow-lg max-w-2xl mx-auto lg:max-w-none">
-
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4" role="list" aria-label="Company statistics">
+    <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg sm:rounded-xl md:rounded-2xl p-3 sm:p-4 md:p-6 border border-green-200 shadow-lg max-w-2xl mx-auto lg:max-w-none">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4" role="list" aria-label="Company statistics">
             {stats.map((stat, index) => (
                 <div
                     key={stat.label}
-                    className="text-center group cursor-pointer bg-white/50 rounded-lg sm:rounded-xl p-2 sm:p-3 md:p-4 shadow-sm hover:shadow-md transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-300"
+                    className="text-center group cursor-pointer bg-white/50 rounded-lg sm:rounded-xl p-2 sm:p-3 shadow-sm hover:shadow-md transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-300"
                     role="listitem"
                     tabIndex={0}
                     aria-label={`${stat.label}: ${stat.value}`}
                 >
-                    <div className="inline-flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg sm:rounded-xl mb-1 sm:mb-2 shadow-md">
-                        <stat.icon className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 lg:h-7 lg:w-7 text-white" aria-hidden="true" />
+                    <div className="inline-flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-md sm:rounded-lg md:rounded-xl mb-1 sm:mb-2 shadow-md">
+                        <stat.icon className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 lg:h-6 lg:w-6 text-white" aria-hidden="true" />
                     </div>
-                    <div className="text-lg sm:text-xl md:text-2xl font-black text-gray-900 leading-none">{stat.value}</div>
+                    <div className="text-sm sm:text-base md:text-lg lg:text-xl font-black text-gray-900 leading-none">{stat.value}</div>
                     <div className="text-xs sm:text-sm font-bold text-gray-700 leading-tight">{stat.label}</div>
-                    <div className="text-xs text-gray-500 hidden sm:block">{stat.description}</div>
+                    <div className="text-xs text-gray-500 hidden md:block">{stat.description}</div>
                 </div>
             ))}
         </div>
@@ -183,10 +182,10 @@ const StatsGrid = ({ stats }: { stats: typeof STATS }) => (
 )
 
 const UrgencyBanner = ({ currentMessage }: { currentMessage: string }) => (
-    <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-red-600 to-orange-600 text-white py-2 sm:py-3 z-20" role="banner" aria-label="Urgency message">
+    <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-red-600 to-orange-600 text-white py-1.5 sm:py-2 md:py-3 z-20" role="banner" aria-label="Urgency message">
         <div className="container mx-auto px-3 sm:px-4">
-            <div className="text-center text-xs sm:text-sm md:text-base font-bold flex items-center justify-center">
-                <Zap className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 mr-1 sm:mr-2 animate-pulse flex-shrink-0" aria-hidden="true" />
+            <div className="text-center text-xs sm:text-sm font-bold flex items-center justify-center">
+                <Zap className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2 animate-pulse flex-shrink-0" aria-hidden="true" />
                 <span className="truncate">{currentMessage}</span>
             </div>
         </div>
@@ -194,8 +193,6 @@ const UrgencyBanner = ({ currentMessage }: { currentMessage: string }) => (
 )
 
 export const HeroCTASection = ({ inView, enableAnimations, scrollToContact }: { inView: boolean; enableAnimations: boolean; scrollToContact: () => void }) => {
-
-
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -205,15 +202,15 @@ export const HeroCTASection = ({ inView, enableAnimations, scrollToContact }: { 
             role="complementary"
             aria-label="Quick quote CTA card"
         >
-            {/* Floating decorative elements with enhanced animations */}
+            {/* Floating decorative elements with enhanced animations - smaller on mobile */}
             <m.div
                 initial={{ opacity: 0, scale: 0.8, x: 30 }}
                 animate={{
                     opacity: 1,
                     scale: 1,
                     x: 0,
-                    y: enableAnimations ? [0, -12, 0] : 0,
-                    rotate: enableAnimations ? [0, 3, 0] : 0
+                    y: enableAnimations ? [0, -8, 0] : 0,
+                    rotate: enableAnimations ? [0, 2, 0] : 0
                 }}
                 transition={{
                     opacity: { duration: 0.6, delay: 1.4 },
@@ -232,11 +229,11 @@ export const HeroCTASection = ({ inView, enableAnimations, scrollToContact }: { 
                         delay: 2.5
                     } : { duration: 0 }
                 }}
-                className="absolute -top-6 -right-6 sm:-top-8 sm:-right-8 md:-top-10 md:-right-10 lg:-top-12 lg:-right-12 bg-gradient-to-r from-emerald-500 via-green-500 to-emerald-600 text-white p-3 sm:p-4 md:p-5 lg:p-6 rounded-xl sm:rounded-2xl md:rounded-3xl shadow-2xl sm:shadow-3xl max-w-[160px] sm:max-w-[180px] md:max-w-[220px] z-30 border-2 border-white/20 backdrop-blur-sm"
+                className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 md:-top-6 md:-right-6 lg:-top-8 lg:-right-8 bg-gradient-to-r from-emerald-500 via-green-500 to-emerald-600 text-white p-2 sm:p-3 md:p-4 lg:p-5 rounded-lg sm:rounded-xl md:rounded-2xl shadow-lg sm:shadow-xl max-w-[120px] sm:max-w-[140px] md:max-w-[160px] lg:max-w-[180px] z-30 border-2 border-white/20 backdrop-blur-sm"
             >
                 <div className="text-center">
-                    <div className="text-sm sm:text-base font-bold mb-1">⚡ High Chances</div>
-                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-black">of Approval</div>
+                    <div className="text-xs sm:text-sm font-bold mb-0.5 sm:mb-1">⚡ High Chances</div>
+                    <div className="text-sm sm:text-base md:text-lg lg:text-xl font-black">of Approval</div>
                 </div>
             </m.div>
 
@@ -246,8 +243,8 @@ export const HeroCTASection = ({ inView, enableAnimations, scrollToContact }: { 
                     opacity: 1,
                     scale: 1,
                     x: 0,
-                    y: enableAnimations ? [0, 12, 0] : 0,
-                    rotate: enableAnimations ? [0, -3, 0] : 0
+                    y: enableAnimations ? [0, 8, 0] : 0,
+                    rotate: enableAnimations ? [0, -2, 0] : 0
                 }}
                 transition={{
                     opacity: { duration: 0.6, delay: 1.6 },
@@ -266,15 +263,15 @@ export const HeroCTASection = ({ inView, enableAnimations, scrollToContact }: { 
                         delay: 3
                     } : { duration: 0 }
                 }}
-                className="absolute -bottom-6 -left-6 sm:-bottom-8 sm:-left-8 md:-bottom-10 md:-left-10 lg:-bottom-16 lg:-left-12 bg-gradient-to-r from-violet-500 via-purple-500 to-violet-600 text-white p-3 sm:p-4 md:p-5 lg:p-6 rounded-xl sm:rounded-2xl md:rounded-3xl shadow-2xl sm:shadow-3xl max-w-[160px] sm:max-w-[180px] md:max-w-[220px] z-30 border-2 border-white/20 backdrop-blur-sm"
+                className="absolute -bottom-3 -left-3 sm:-bottom-4 sm:-left-4 md:-bottom-6 md:-left-6 lg:-bottom-8 lg:-left-8 bg-gradient-to-r from-violet-500 via-purple-500 to-violet-600 text-white p-2 sm:p-3 md:p-4 lg:p-5 rounded-lg sm:rounded-xl md:rounded-2xl shadow-lg sm:shadow-xl max-w-[120px] sm:max-w-[140px] md:max-w-[160px] lg:max-w-[180px] z-30 border-2 border-white/20 backdrop-blur-sm"
             >
                 <div className="text-center">
-                    <div className="text-sm sm:text-base font-bold mb-1">🛡️ No Obligation</div>
-                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-black">100% Free</div>
+                    <div className="text-xs sm:text-sm font-bold mb-0.5 sm:mb-1">🛡️ No Obligation</div>
+                    <div className="text-sm sm:text-base md:text-lg lg:text-xl font-black">100% Free</div>
                 </div>
             </m.div>
 
-            <div className="text-center space-y-4 sm:space-y-6 md:space-y-8 relative z-10">
+            <div className="text-center space-y-3 sm:space-y-4 md:space-y-6 relative z-10">
                 {/* Enhanced Icon with pulsing effect */}
                 <m.div
                     animate={enableAnimations ? {
@@ -287,23 +284,23 @@ export const HeroCTASection = ({ inView, enableAnimations, scrollToContact }: { 
                         repeat: Infinity,
                         delay: 2
                     } : {}}
-                    className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 bg-gradient-to-br from-blue-500 via-purple-600 to-blue-500 rounded-2xl sm:rounded-3xl md:rounded-[2rem] shadow-2xl sm:shadow-3xl border-2 border-white/30"
+                    className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-gradient-to-br from-blue-500 via-purple-600 to-blue-500 rounded-xl sm:rounded-2xl md:rounded-3xl shadow-lg sm:shadow-xl border-2 border-white/30"
                 >
-                    <Star className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 lg:h-14 lg:w-14 text-white" aria-hidden="true" />
+                    <Star className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-white" aria-hidden="true" />
                 </m.div>
 
                 {/* Enhanced Headline with gradient text */}
                 <div>
-                    <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black mb-2 sm:mb-3 leading-tight bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
+                    <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black mb-1 sm:mb-2 leading-tight bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
                         🚀 QUICK & EASY PROCESS
                     </h3>
-                    <p className="text-gray-700 text-sm sm:text-base md:text-lg font-semibold">
+                    <p className="text-gray-700 text-sm sm:text-base font-semibold">
                         Get Your Free Quote in Minutes
                     </p>
                 </div>
 
                 {/* Enhanced Benefits with staggered animation */}
-                <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3" role="group" aria-label="Process benefits">
+                <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 md:gap-3" role="group" aria-label="Process benefits">
                     {['No obligation', 'Licensed agent', 'Instant quotes'].map((text, index) => (
                         <m.div
                             key={text}
@@ -314,9 +311,9 @@ export const HeroCTASection = ({ inView, enableAnimations, scrollToContact }: { 
                                 delay: 1.8 + (index * 0.2),
                                 ease: "easeOut"
                             }}
-                            className="flex items-center bg-gradient-to-r from-green-100 to-emerald-100 px-3 py-2 rounded-xl border border-green-200 shadow-sm hover:shadow-md transition-all duration-300"
+                            className="flex items-center bg-gradient-to-r from-green-100 to-emerald-100 px-2 py-1.5 sm:px-3 sm:py-2 rounded-lg sm:rounded-xl border border-green-200 shadow-sm hover:shadow-md transition-all duration-300"
                         >
-                            <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-green-600 mr-2" aria-hidden="true" />
+                            <CheckCircle2 className="h-3 w-3 sm:h-4 sm:w-4 text-green-600 mr-1 sm:mr-2" aria-hidden="true" />
                             <span className="text-xs sm:text-sm text-green-700 font-semibold">{text}</span>
                         </m.div>
                     ))}
@@ -337,19 +334,19 @@ export const HeroCTASection = ({ inView, enableAnimations, scrollToContact }: { 
                         repeat: Infinity,
                         delay: 3
                     } : {}}
-                    className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 rounded-xl sm:rounded-2xl p-4 sm:p-6 border-2 border-white/20 shadow-2xl"
+                    className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 rounded-lg sm:rounded-xl md:rounded-2xl p-3 sm:p-4 md:p-6 border-2 border-white/20 shadow-xl sm:shadow-2xl"
                 >
                     <div className="text-center">
-                        <p className="text-white font-bold text-sm sm:text-base mb-3">Ready to Get Protected?</p>
+                        <p className="text-white font-bold text-sm sm:text-base mb-2 sm:mb-3">Ready to Get Protected?</p>
                         <m.button
                             onClick={scrollToContact}
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-all duration-300 flex items-center group mx-auto shadow-lg hover:shadow-xl"
+                            className="bg-white text-blue-600 px-6 py-3 sm:px-8 sm:py-4 rounded-lg sm:rounded-xl font-bold text-base sm:text-lg hover:bg-blue-50 transition-all duration-300 flex items-center group mx-auto shadow-lg hover:shadow-xl w-full sm:w-auto justify-center"
                             aria-label="Start free quote process"
                         >
                             Start Now
-                            <ArrowRight className="ml-3 h-5 w-5 transition-transform group-hover:translate-x-2" aria-hidden="true" />
+                            <ArrowRight className="ml-2 sm:ml-3 h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover:translate-x-2" aria-hidden="true" />
                         </m.button>
                     </div>
                 </m.div>
@@ -425,27 +422,29 @@ export default function Hero() {
                 <UrgencyBanner currentMessage={currentUrgencyMessage} />
 
                 {/* Main Content Container - Critical above-the-fold content */}
-                <div className="w-full relative z-10 pt-16 sm:pt-20 md:pt-24 lg:pt-16 pb-8 sm:pb-12 md:pb-16">
-                    <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-                        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 lg:gap-16 items-start">
+                <div className="w-full relative z-10 pt-8 sm:pt-12 md:pt-16 lg:pt-20 pb-4 sm:pb-6 md:pb-8">
+                    <div className="container mx-auto px-4 sm:px-6 md:px-8">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
 
                             {/* First Column - Content */}
-                            <div className="space-y-4 sm:space-y-6 md:space-y-8 text-center lg:text-left">
+                            <div className="space-y-4 sm:space-y-5 md:space-y-6 text-center lg:text-left order-1">
                                 <MainHeadline />
                                 <CompellingSubheadline customerCount={customerCount} scrollToContact={scrollToContact} />
-                                <TrustIndicators />
+                                <div className="hidden sm:block">
+                                    <TrustIndicators />
+                                </div>
                                 <StatsGrid stats={STATS} />
                             </div>
 
                             {/* Second Column - Visual Card and CTA */}
-                            <div className="flex flex-col justify-around items-center  min-h-full">
+                            <div className="flex flex-col space-y-4 sm:space-y-6 order-2">
                                 {/* Visual Card */}
-                                <div className="relative px-2 sm:px-4 lg:px-0">
+                                <div className="relative w-full">
                                     <m.div
                                         initial={{ opacity: 0, y: 20 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 0.6, ease: "easeOut" }}
-                                        className="relative max-w-md mx-auto lg:max-w-none"
+                                        className="relative max-w-xs sm:max-w-sm md:max-w-md mx-auto lg:max-w-none"
                                     >
                                         {/* Main Protection Card */}
                                         <m.div
@@ -453,7 +452,7 @@ export default function Hero() {
                                             animate={{
                                                 opacity: 1,
                                                 scale: 1,
-                                                y: enableAnimations ? [0, -10, 0] : 0,
+                                                y: enableAnimations ? [0, -6, 0] : 0,
                                             }}
                                             transition={{
                                                 opacity: { duration: 0.4 },
@@ -465,40 +464,40 @@ export default function Hero() {
                                                     delay: 1
                                                 } : { duration: 0 }
                                             }}
-                                            className="bg-gradient-to-br from-white via-blue-50 to-purple-50 rounded-2xl sm:rounded-3xl md:rounded-[2rem] shadow-xl sm:shadow-2xl p-4 sm:p-6 md:p-8 lg:p-10 border border-white/50 backdrop-blur-lg relative overflow-hidden"
+                                            className="bg-gradient-to-br from-white via-blue-50 to-purple-50 rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl p-4 sm:p-5 md:p-6 border border-white/50 backdrop-blur-lg relative overflow-hidden"
                                             role="complementary"
                                             aria-label="Protection card"
                                         >
-                                            <div className="text-center space-y-3 sm:space-y-4 md:space-y-6 relative z-10">
-                                                <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-gradient-to-br from-blue-500 via-purple-600 to-blue-500 rounded-xl sm:rounded-2xl md:rounded-3xl shadow-lg sm:shadow-xl">
-                                                    <Shield className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-white" aria-hidden="true" />
+                                            <div className="text-center space-y-3 sm:space-y-4 relative z-10">
+                                                <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-blue-500 via-purple-600 to-blue-500 rounded-xl shadow-lg">
+                                                    <Shield className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-white" aria-hidden="true" />
                                                 </div>
 
                                                 <div>
-                                                    <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-gray-900 mb-1 sm:mb-2 leading-tight">
+                                                    <h3 className="text-lg sm:text-xl md:text-2xl font-black text-gray-900 mb-1 leading-tight">
                                                         🛡️ TOTAL PROTECTION
                                                     </h3>
-                                                    <p className="text-gray-600 text-sm sm:text-base md:text-lg font-semibold">
+                                                    <p className="text-gray-600 text-sm sm:text-base font-semibold">
                                                         Auto • Home • Life • Health • Business
                                                     </p>
                                                 </div>
 
-                                                <div className="flex items-center justify-center space-x-0.5 sm:space-x-1" role="group" aria-label="Customer rating">
+                                                <div className="flex items-center justify-center space-x-0.5" role="group" aria-label="Customer rating">
                                                     {[...Array(5)].map((_, i) => (
-                                                        <Star key={i} className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 lg:h-7 lg:w-7 text-yellow-500 fill-current" aria-hidden="true" />
+                                                        <Star key={i} className="h-4 w-4 sm:h-5 sm:w-5 text-yellow-500 fill-current" aria-hidden="true" />
                                                     ))}
-                                                    <span className="ml-2 sm:ml-3 text-gray-700 font-black text-sm sm:text-base md:text-lg lg:text-xl">4.9/5</span>
+                                                    <span className="ml-2 text-gray-700 font-black text-sm sm:text-base">4.9/5</span>
                                                 </div>
 
                                                 {/* Live Claims Counter */}
-                                                <div className="bg-green-100 border-2 border-green-300 rounded-lg sm:rounded-xl p-3 sm:p-4">
+                                                <div className="bg-green-100 border-2 border-green-300 rounded-lg p-3">
                                                     <div className="text-center">
-                                                        <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-green-600 mb-1">
+                                                        <div className="text-xl sm:text-2xl md:text-3xl font-black text-green-600 mb-1">
                                                             Full Protection
                                                         </div>
-                                                        <div className="text-green-700 font-bold text-xs sm:text-sm">For All That Matters To You</div>
-                                                        <div className="flex items-center justify-center mt-1 sm:mt-2">
-                                                            <Heart className="h-3 w-3 sm:h-4 sm:w-4 text-red-500 animate-pulse mr-1" aria-hidden="true" />
+                                                        <div className="text-green-700 font-bold text-sm">For All That Matters To You</div>
+                                                        <div className="flex items-center justify-center mt-1">
+                                                            <Heart className="h-4 w-4 text-red-500 animate-pulse mr-1" aria-hidden="true" />
                                                             <span className="text-xs text-green-600">Lives Changed Forever</span>
                                                         </div>
                                                     </div>
@@ -506,14 +505,14 @@ export default function Hero() {
                                             </div>
                                         </m.div>
 
-                                        {/* Floating Cards with Motion */}
+                                        {/* Floating Cards with Motion - better positioned for mobile */}
                                         <m.div
                                             initial={{ opacity: 0, scale: 0.8 }}
                                             animate={{
                                                 opacity: 1,
                                                 scale: 1,
-                                                y: enableAnimations ? [0, -8, 0] : 0,
-                                                rotate: enableAnimations ? [0, 2, 0] : 0
+                                                y: enableAnimations ? [0, -4, 0] : 0,
+                                                rotate: enableAnimations ? [0, 1, 0] : 0
                                             }}
                                             transition={{
                                                 opacity: { duration: 0.5, delay: 0.2 },
@@ -531,12 +530,12 @@ export default function Hero() {
                                                     delay: 1.5
                                                 } : { duration: 0 }
                                             }}
-                                            className="absolute -top-12 -left-12 sm:-top-13 sm:-left-13 md:-top-8 md:-left-4 lg:-top-16 lg:-left-6 bg-gradient-to-r from-green-500 to-green-600 text-white p-2 sm:p-3 md:p-4 lg:p-5 rounded-lg sm:rounded-xl md:rounded-2xl shadow-xl sm:shadow-2xl max-w-[140px] sm:max-w-[160px] md:max-w-[200px]"
+                                            className="absolute -top-4 -left-4 sm:-top-6 sm:-left-6 bg-gradient-to-r from-green-500 to-green-600 text-white p-2 sm:p-3 rounded-lg shadow-lg max-w-[90px] sm:max-w-[110px] md:max-w-[130px]"
                                             role="complementary"
                                             aria-label="Full Protection"
                                         >
-                                            <div className="text-xs sm:text-sm font-bold">🛡️ Full Protection</div>
-                                            <div className="text-sm sm:text-base md:text-lg lg:text-xl font-black">For All That Matters To You</div>
+                                            <div className="text-xs font-bold">🛡️ Full Protection</div>
+                                            <div className="text-xs sm:text-sm font-black">For All That Matters</div>
                                         </m.div>
 
                                         <m.div
@@ -544,8 +543,8 @@ export default function Hero() {
                                             animate={{
                                                 opacity: 1,
                                                 scale: 1,
-                                                y: enableAnimations ? [0, 8, 0] : 0,
-                                                rotate: enableAnimations ? [0, -2, 0] : 0
+                                                y: enableAnimations ? [0, 4, 0] : 0,
+                                                rotate: enableAnimations ? [0, -1, 0] : 0
                                             }}
                                             transition={{
                                                 opacity: { duration: 0.5, delay: 0.4 },
@@ -563,22 +562,22 @@ export default function Hero() {
                                                     delay: 2
                                                 } : { duration: 0 }
                                             }}
-                                            className="absolute -bottom-2 -right-2 sm:-bottom-3 sm:-right-3 md:-bottom-8 md:-right-4 lg:-bottom-12 lg:-right-6 bg-gradient-to-r from-purple-500 to-purple-600 text-white p-2 sm:p-3 md:p-4 lg:p-5 rounded-lg sm:rounded-xl md:rounded-2xl shadow-xl sm:shadow-2xl max-w-[140px] sm:max-w-[160px] md:max-w-[200px]"
+                                            className="absolute -bottom-2 -right-2 sm:-bottom-3 sm:-right-3 bg-gradient-to-r from-purple-500 to-purple-600 text-white p-2 sm:p-3 rounded-lg shadow-lg max-w-[90px] sm:max-w-[110px] md:max-w-[130px]"
                                             role="complementary"
                                             aria-label="Emergency claims support"
                                         >
-                                            <div className="text-xs sm:text-sm font-bold">🚨 Emergency Claims Support</div>
-                                            <div className="text-sm sm:text-base md:text-lg lg:text-xl font-black">24/7 Hotline</div>
+                                            <div className="text-xs font-bold">🚨 Emergency</div>
+                                            <div className="text-xs sm:text-sm font-black">24/7 Hotline</div>
                                         </m.div>
                                     </m.div>
                                 </div>
 
-                                {/* Hero CTA Section - Floating card with animations */}
+                                {/* Hero CTA Section - Better mobile layout */}
                                 <m.div
-                                    initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                                    initial={{ opacity: 0, y: 20, scale: 0.95 }}
                                     animate={{
                                         opacity: 1,
-                                        y: enableAnimations ? [0, -5, 0] : 0,
+                                        y: enableAnimations ? [0, -2, 0] : 0,
                                         scale: 1
                                     }}
                                     transition={{
@@ -595,13 +594,18 @@ export default function Hero() {
                                         },
                                         scale: { duration: 0.6, delay: 0.8 }
                                     }}
-                                    className="relative z-20 max-w-md mx-auto lg:max-w-none -mt-14 sm:-mt-16 md:-mt-20 lg:-mt-12"
+                                    className="relative z-20 max-w-xs sm:max-w-sm md:max-w-md mx-auto lg:max-w-none w-full"
                                 >
-                                    <div className="bg-gradient-to-br from-white via-blue-50 to-purple-50 rounded-2xl sm:rounded-3xl md:rounded-[2rem] shadow-xl sm:shadow-2xl p-4 sm:p-6 md:p-8 lg:p-10 border border-white/50 backdrop-blur-lg relative">
+                                    <div className="bg-gradient-to-br from-white via-blue-50 to-purple-50 rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl p-4 sm:p-5 md:p-6 border border-white/50 backdrop-blur-lg relative">
                                         <HeroCTASection inView={true} enableAnimations={enableAnimations} scrollToContact={scrollToContact} />
                                     </div>
                                 </m.div>
                             </div>
+                        </div>
+
+                        {/* Mobile Trust Indicators - Show on mobile only */}
+                        <div className="block sm:hidden mt-6">
+                            <TrustIndicators />
                         </div>
                     </div>
                 </div>

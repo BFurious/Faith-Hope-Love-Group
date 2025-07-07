@@ -86,7 +86,6 @@ const CTA_OPTIONS = [
 const BENEFITS = [
     'No-obligation quotes',
     'Licensed Georgia agent',
-    '24/7 emergency support',
     'Personalized coverage',
     'Competitive rates'
 ]
@@ -158,43 +157,6 @@ const AnimatedBenefitItem = ({ benefit, index, inView }: { benefit: string, inde
             <p className="text-sm text-gray-600">
                 Experience the difference with our dedicated team and comprehensive coverage options.
             </p>
-        </div>
-    </motion.div>
-)
-
-export const EmergencyContactSection = ({ inView }: { inView: boolean }) => (
-    <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-        transition={{ duration: 0.8, delay: 3.0 }}
-        className="bg-gradient-to-r from-red-500 to-red-600 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden"
-    >
-        <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16" />
-        <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-12 -translate-x-12" />
-
-        <div className="relative z-10">
-            <div className="flex items-center mb-6">
-                <Shield className="h-8 w-8 mr-4" />
-                <h4 className="text-2xl font-bold">24/7 Emergency Claims Support</h4>
-            </div>
-            <p className="text-red-100 mb-8 text-lg leading-relaxed max-w-3xl">
-                Accidents happen anytime.
-                Don't wait - get the claim support you need immediately.
-            </p>
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                <a
-                    href="tel:+1-770-882-4899"
-                    className="inline-flex items-center bg-white text-red-600 font-semibold px-6 py-3 rounded-xl hover:bg-red-50 transition-all duration-300 group"
-                >
-                    <Phone className="h-5 w-5 mr-2" />
-                    +1-770-882-4899
-                    <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </a>
-                <div className="text-red-100 text-sm">
-                    <p>Available 24/7 for emergency claim support</p>
-                    <p>Immediate assistance guaranteed</p>
-                </div>
-            </div>
         </div>
     </motion.div>
 )
@@ -333,7 +295,6 @@ export default function Contact() {
                         </div>
                     </motion.div>
 
-                    <EmergencyContactSection inView={inView} />
                 </div>
             </div>
         </section>

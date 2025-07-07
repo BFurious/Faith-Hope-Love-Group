@@ -99,7 +99,7 @@ export default function About() {
                     </h2>
 
                     <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-                        For over 25 years, we've been more than just an insurance company.
+                        we've been more than just an insurance company.
                         We're a family-owned business dedicated to protecting families like yours.
                     </p>
                 </motion.div>

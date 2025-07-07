@@ -361,23 +361,10 @@ export default function ContactForm({
                         )}
                     </div>
 
-                    {/* Contact Email of Company (Read-only) */}
-                    <div>
-                        <label htmlFor="companyEmail" className="block text-sm font-semibold text-gray-700 mb-2">
-                            Contact Email of Company
-                        </label>
-                        <input
-                            type="email"
-                            id="companyEmail"
-                            value={companyEmail}
-                            readOnly
-                            className="w-full pr-4 py-4 pl-4 border-2 rounded-xl bg-gray-100 text-gray-500 cursor-not-allowed focus:outline-none"
-                        />
-                    </div>
-
                     {errorMsg && (
                         <div className="text-red-600 text-center text-sm mb-2">{errorMsg}</div>
                     )}
+                    
                     {/* Submit Button */}
                     <motion.button
                         type="submit"

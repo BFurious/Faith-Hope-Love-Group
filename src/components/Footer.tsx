@@ -138,7 +138,7 @@ export default function Footer() {
                             </Link>
 
                             <p className="text-gray-300 leading-relaxed text-sm md:text-base max-w-md">
-                                For over 25 years, we've been protecting families and businesses with comprehensive
+                                We've been protecting families and businesses with comprehensive
                                 insurance solutions built on hope, faith, and love. Your trusted partner in life's journey.
                             </p>
 
