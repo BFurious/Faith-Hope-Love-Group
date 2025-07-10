@@ -36,20 +36,20 @@ const values = [
 const achievements = [
     {
         icon: Award,
-        stat: '25+',
-        label: 'Years of Excellence'
+        stat: 'Years of Experience',
+        label: 'Serving Georgia'
     },
     {
         icon: Users,
-        stat: '50,000+',
-        label: 'Satisfied Customers'
+        stat: 'Satisfied Clients',
+        label: 'All over the world'
     }
 ]
 
 const features = [
     {
         icon: Clock,
-        title: '24/7 Customer Support',
+        title: 'Best Timely Customer Support',
         description: 'Round-the-clock assistance when you need it most'
     },
     {

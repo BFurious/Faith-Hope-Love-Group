@@ -5,25 +5,29 @@ A stunning, modern, and SEO-optimized insurance website built with the latest we
 ## 🌟 Features
 
 ### ✨ Design & User Experience
+
 - **Stunning Modern Design**: Beautiful gradient backgrounds, smooth animations, and eye-catching visuals
 - **Responsive Design**: Perfect experience across all devices (mobile, tablet, desktop)
 - **Interactive Animations**: Smooth Framer Motion animations that engage users
 - **Professional Typography**: Clean, readable fonts optimized for insurance industry
 
 ### 🚀 Performance & SEO
+
 - **Next.js 14 App Router**: Latest Next.js features for optimal performance
 - **Perfect SEO**: Comprehensive meta tags, structured data, and OpenGraph support
 - **Fast Loading**: Optimized images, lazy loading, and minimal bundle size
 - **Lighthouse Score**: 95+ performance score
 
 ### 🛡️ Insurance Features
-- **Comprehensive Services**: Auto, Home, Life, Health, Business, and Travel insurance
+
+- **Comprehensive Services**: Auto, Home, Life, Health, Business Insurance, Obama Care, Medicare Insurance, Notary Services, and Translation & Interpretation Services
 - **Interactive Quote Form**: Modern contact form with validation
 - **Customer Testimonials**: Rotating testimonials with 5-star ratings
 - **FAQ Section**: Interactive accordion with common questions
 - **24/7 Support**: Emergency contact information prominently displayed
 
 ### 🔧 Technical Excellence
+
 - **TypeScript**: Full type safety throughout the application
 - **Tailwind CSS**: Utility-first CSS with custom design system
 - **Modern Icons**: Lucide React icons for consistent visual language
@@ -33,12 +37,14 @@ A stunning, modern, and SEO-optimized insurance website built with the latest we
 ## 🎨 Design System
 
 ### Color Palette
+
 - **Primary**: Blue gradient (Hope)
-- **Secondary**: Orange accent (Faith) 
+- **Secondary**: Orange accent (Faith)
 - **Accent**: Green highlights (Love)
 - **Neutral**: Gray scales for text and backgrounds
 
 ### Components
+
 - **Hero Section**: Eye-catching banner with value proposition
 - **Services Grid**: Interactive cards showcasing insurance types
 - **About Section**: Company story with core values
@@ -50,17 +56,20 @@ A stunning, modern, and SEO-optimized insurance website built with the latest we
 ## 📦 Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone <repository-url>
    cd hope-faith-love-insurance
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Run the development server**
+
    ```bash
    npm run dev
    ```
@@ -79,20 +88,24 @@ A stunning, modern, and SEO-optimized insurance website built with the latest we
 ## 📱 Tech Stack
 
 ### Core Framework
+
 - **Next.js 14** - React framework with App Router
 - **React 18** - Latest React with concurrent features
 - **TypeScript** - Type-safe JavaScript
 
 ### Styling & Design
+
 - **Tailwind CSS** - Utility-first CSS framework
 - **Framer Motion** - Animation library
 - **Lucide React** - Beautiful icon library
 
 ### Form & Validation
+
 - **React Hook Form** - Performant form library
 - **Built-in Validation** - Form validation with error handling
 
 ### Performance
+
 - **Next.js Image** - Optimized image loading
 - **Code Splitting** - Automatic code splitting
 - **SEO Optimization** - Meta tags, sitemaps, robots.txt
@@ -100,6 +113,7 @@ A stunning, modern, and SEO-optimized insurance website built with the latest we
 ## 🎯 Key Pages & Sections
 
 ### Homepage Sections
+
 1. **Header**: Navigation with logo and contact info
 2. **Hero**: Compelling value proposition with statistics
 3. **Services**: Insurance types with detailed features
@@ -112,6 +126,7 @@ A stunning, modern, and SEO-optimized insurance website built with the latest we
 ## 🔍 SEO Optimization
 
 ### Technical SEO
+
 - ✅ Semantic HTML structure
 - ✅ Meta titles and descriptions
 - ✅ OpenGraph and Twitter cards
@@ -120,6 +135,7 @@ A stunning, modern, and SEO-optimized insurance website built with the latest we
 - ✅ Robots.txt configuration
 
 ### Content SEO
+
 - ✅ Insurance-focused keywords
 - ✅ Local business optimization
 - ✅ Trust signals and testimonials
@@ -127,6 +143,7 @@ A stunning, modern, and SEO-optimized insurance website built with the latest we
 - ✅ Mobile-first design
 
 ### Performance SEO
+
 - ✅ Fast loading times (<3s)
 - ✅ Optimized images (WebP/AVIF)
 - ✅ Minimal JavaScript bundles
@@ -136,11 +153,13 @@ A stunning, modern, and SEO-optimized insurance website built with the latest we
 ## 🚀 Deployment
 
 ### Vercel (Recommended)
+
 1. Connect your GitHub repository to Vercel
 2. Deploy automatically on push to main branch
 3. Custom domain configuration available
 
 ### Other Platforms
+
 - **Netlify**: Supports Next.js out of the box
 - **AWS Amplify**: Full-stack deployment
 - **Digital Ocean**: App Platform deployment
@@ -148,12 +167,14 @@ A stunning, modern, and SEO-optimized insurance website built with the latest we
 ## 📊 Performance Metrics
 
 ### Lighthouse Scores (Target)
+
 - **Performance**: 95+
 - **Accessibility**: 100
 - **Best Practices**: 100
 - **SEO**: 100
 
 ### Key Metrics
+
 - **First Contentful Paint**: <1.5s
 - **Largest Contentful Paint**: <2.5s
 - **Cumulative Layout Shift**: <0.1
@@ -168,10 +189,11 @@ A stunning, modern, and SEO-optimized insurance website built with the latest we
 
 ## 📞 Contact Information
 
-**Hope Faith and Love Group**
-- **Phone**: (555) 123-HOPE (4673)
-- **Email**: info@hopefaithlovegroup.com
-- **Address**: 123 Insurance Way, Suite 100
+**Faith Hope Love Group**
+
+- **Phone**: +1-770-882-4899
+- **Email**: care@faholog.com
+- **Address**: Georgia, United States
 - **Hours**: Mon-Fri 8AM-7PM, Sat 9AM-4PM
 
 ## 🤝 Contributing
@@ -188,4 +210,4 @@ A stunning, modern, and SEO-optimized insurance website built with the latest we
 
 ---
 
-Built with ❤️ for the insurance industry. Protecting what matters most. 
+Built with ❤️ for the insurance industry. Protecting what matters most.

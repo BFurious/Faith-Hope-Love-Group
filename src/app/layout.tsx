@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     description: 'Don\'t let disaster destroy your life! Get complete insurance protection in 30 seconds.',
     keywords: [
         'insurance', 'life insurance', 'auto insurance', 'home insurance',
-        'health insurance', 'business insurance', 'cheap insurance',
+        'health insurance', 'cheap insurance',
         'best insurance rates', 'insurance quotes',
         'hope faith love group', 'family protection', 'insurance coverage'
     ],
