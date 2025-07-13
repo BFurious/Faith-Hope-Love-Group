@@ -14,9 +14,7 @@ import {
 } from "lucide-react";
 import { useState, useEffect, Suspense, useCallback, useMemo } from "react";
 import LazyAnimations from "./LazyAnimations";
-import ContactForm from "./ContactForm";
 
-// Constants - Moved to top for better organization
 export const STATS = [
   {
     icon: Users,

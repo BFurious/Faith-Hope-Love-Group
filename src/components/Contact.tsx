@@ -283,13 +283,13 @@ export default function Contact() {
         </motion.div>
 
         {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-12 relative justify-center items-center">
           {/* Contact Form - Left Column */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="lg:col-span-1 w-full"
+            className="lg:col-span-1"
           >
             <ContactForm
               title="Get Your Free Quote"
