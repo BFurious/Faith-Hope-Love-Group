@@ -509,18 +509,22 @@ export default function Hero() {
   const scrollToQuoteSection = useCallback(() => {
     const quoteSection = document.getElementById("hero-quote-section");
     if (quoteSection) {
-      quoteSection.scrollIntoView({
+      const rect = quoteSection.getBoundingClientRect();
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+      const targetPosition = scrollTop + rect.top - 100; // 100px offset from top
+
+      window.scrollTo({
+        top: targetPosition,
         behavior: "smooth",
-        block: "start",
       });
 
-      // Focus on the name input field after scrolling
       setTimeout(() => {
         const nameInput = document.getElementById("name");
         if (nameInput) {
           nameInput.focus();
         }
-      }, 800); // Wait for scroll animation to complete
+      }, 1000); // Wait for scroll animation to complete
     }
   }, []);
 

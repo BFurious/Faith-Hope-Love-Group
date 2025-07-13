@@ -108,8 +108,8 @@ export default function HomeContact() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 rounded-3xl p-8 text-white relative overflow-hidden"
             >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16" />
-              <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-12 -translate-x-12" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-8" />
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-12 -translate-x-8" />
 
               <div className="relative z-10">
                 <div className="flex items-center mb-4">

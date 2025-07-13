@@ -521,11 +521,11 @@ export default function Testimonials() {
           transition={{ duration: 0.8, delay: 1 }}
           className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 rounded-3xl md:rounded-[2rem] p-8 md:p-16 text-white text-center mx-4 lg:mx-0 relative overflow-hidden"
         >
-          <div className="relative z-10">
-            <h3 className="text-3xl md:text-5xl font-black mb-6">
+          <div className="relative z-10 flex flex-col gap-4 justify-between items-center">
+            <h3 className="text-3xl md:text-5xl font-black">
               Join 50,000+ Satisfied Customers
             </h3>
-            <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
               Don't wait to get the protection you deserve.{" "}
               <strong>
                 Every day you delay is another day without proper coverage.
@@ -534,7 +534,7 @@ export default function Testimonials() {
               us to guide them to the perfect insurance plan.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-12 justify-center">
               <Link href="/#hero-quote-section" className="btn-primary group">
                 Get Free Quote
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />

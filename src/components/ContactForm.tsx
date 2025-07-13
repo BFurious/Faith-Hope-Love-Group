@@ -39,7 +39,6 @@ export default function ContactForm({
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
-  const companyEmail = "care@faholog.com";
   const bestTimeOptions = ["Morning", "Afternoon", "Evening", "Anytime"];
 
   const insuranceTypes = [
@@ -168,13 +167,12 @@ export default function ContactForm({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 relative overflow-hidden"
+      id="hero-quote-section"
     >
-      {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-50 to-purple-50 rounded-full -translate-y-16 translate-x-16" />
-      <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-br from-purple-50 to-blue-50 rounded-full translate-y-12 -translate-x-12" />
+      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-50 to-purple-50 rounded-full -translate-y-16 translate-x-8" />
+      <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-br from-purple-50 to-blue-50 rounded-full translate-y-12 -translate-x-8" />
 
       <div className="relative z-10">
-        {/* Header */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl mb-4 shadow-lg">
             <Shield className="h-6 w-6 text-white" />
@@ -183,11 +181,7 @@ export default function ContactForm({
           <p className="text-gray-600 leading-relaxed">{subtitle}</p>
         </div>
 
-        {/* Trust indicators */}
-        <div
-          className="flex items-center justify-center gap-6 mb-8 p-4 bg-gray-50 rounded-2xl"
-          id="hero-quote-section"
-        >
+        <div className="flex items-center justify-center gap-6 mb-8 p-4 bg-gray-50 rounded-2xl">
           <div className="flex items-center text-sm text-gray-600">
             <Shield className="h-4 w-4 mr-2 text-green-600" />
             <span>Licensed agent</span>

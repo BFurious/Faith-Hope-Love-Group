@@ -165,7 +165,7 @@ export default function Services({ showLimited = false }: ServicesProps) {
   return (
     <section
       id="services"
-      className="section-padding bg-gradient-to-br from-gray-50 to-white"
+      className="section-padding bg-gradient-to-br from-gray-50 to-blue-50"
     >
       <div className="container-custom">
         {/* Header */}

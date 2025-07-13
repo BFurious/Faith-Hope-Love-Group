@@ -3,168 +3,175 @@
 @tailwind utilities;
 
 @layer base {
-    html {
-        scroll-behavior: smooth;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-rendering: optimizeLegibility;
-    }
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
 
-    body {
-        @apply bg-white text-gray-900 font-sans antialiased;
-        font-feature-settings: 'rlig' 1, 'calt' 1;
-    }
+  body {
+    @apply bg-white text-gray-900 font-sans antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    overflow-x: hidden;
+  }
 
-    * {
-        @apply border-gray-200;
-    }
+  * {
+    @apply border-gray-200;
+  }
 }
 
 @layer components {
+  /* Performance-optimized scroll animation */
+  .animate-scroll {
+    animation: scroll 15s linear infinite;
+  }
 
-    /* Performance-optimized scroll animation */
-    .animate-scroll {
-        animation: scroll 15s linear infinite;
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
     }
 
-    @keyframes scroll {
-        0% {
-            transform: translateX(0);
-        }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
 
-        100% {
-            transform: translateX(-50%);
-        }
+  /* Marquee animations for testimonials */
+  .animate-marquee-left {
+    animation: marquee-left 40s linear infinite;
+  }
+
+  .animate-marquee-right {
+    animation: marquee-right 35s linear infinite;
+  }
+
+  @keyframes marquee-left {
+    0% {
+      transform: translateX(0);
     }
 
-    /* Marquee animations for testimonials */
-    .animate-marquee-left {
-        animation: marquee-left 40s linear infinite;
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes marquee-right {
+    0% {
+      transform: translateX(-50%);
     }
 
-    .animate-marquee-right {
-        animation: marquee-right 35s linear infinite;
+    100% {
+      transform: translateX(0);
     }
+  }
 
-    @keyframes marquee-left {
-        0% {
-            transform: translateX(0);
-        }
+  /* Performance-optimized button transitions */
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-xl px-6 py-3 text-base font-semibold text-white transition-all duration-200 ease-out;
+    @apply bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700;
+    @apply shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95;
+  }
 
-        100% {
-            transform: translateX(-50%);
-        }
-    }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-xl px-6 py-3 text-base font-semibold transition-all duration-200 ease-out;
+    @apply bg-white text-blue-600 border-2 border-blue-600 hover:bg-blue-600 hover:text-white;
+    @apply shadow-md hover:shadow-lg transform hover:scale-105 active:scale-95;
+  }
 
-    @keyframes marquee-right {
-        0% {
-            transform: translateX(-50%);
-        }
+  .gradient-bg {
+    background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 50%, #0369a1 100%);
+  }
 
-        100% {
-            transform: translateX(0);
-        }
-    }
+  .gradient-text {
+    background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 50%, #0369a1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 
-    /* Performance-optimized button transitions */
-    .btn-primary {
-        @apply inline-flex items-center justify-center rounded-xl px-6 py-3 text-base font-semibold text-white transition-all duration-200 ease-out;
-        @apply bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700;
-        @apply shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95;
-    }
+  .hero-pattern {
+    background-image: radial-gradient(
+        circle at 25% 25%,
+        rgba(14, 165, 233, 0.1) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 75% 75%,
+        rgba(3, 105, 161, 0.1) 0%,
+        transparent 50%
+      );
+  }
 
-    .btn-secondary {
-        @apply inline-flex items-center justify-center rounded-xl px-6 py-3 text-base font-semibold transition-all duration-200 ease-out;
-        @apply bg-white text-blue-600 border-2 border-blue-600 hover:bg-blue-600 hover:text-white;
-        @apply shadow-md hover:shadow-lg transform hover:scale-105 active:scale-95;
-    }
+  .card-hover {
+    @apply transition-all duration-300 transform hover:scale-105 hover:shadow-xl;
+  }
 
-    .gradient-bg {
-        background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 50%, #0369a1 100%);
-    }
+  .section-padding {
+    @apply py-8 md:py-16;
+  }
 
-    .gradient-text {
-        background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 50%, #0369a1 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
-
-    .hero-pattern {
-        background-image: radial-gradient(circle at 25% 25%, rgba(14, 165, 233, 0.1) 0%, transparent 50%),
-            radial-gradient(circle at 75% 75%, rgba(3, 105, 161, 0.1) 0%, transparent 50%);
-    }
-
-    .card-hover {
-        @apply transition-all duration-300 transform hover:scale-105 hover:shadow-xl;
-    }
-
-    .section-padding {
-        @apply py-16 md:py-24;
-    }
-
-    /* Container utilities for consistent spacing */
-    .container-custom {
-        @apply container mx-auto px-4 sm:px-6 lg:px-8;
-    }
+  /* Container utilities for consistent spacing */
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
 }
 
 @layer utilities {
-
-    /* Reduce motion for users who prefer it */
-    @media (prefers-reduced-motion: reduce) {
-
-        *,
-        *::before,
-        *::after {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
-            transition-duration: 0.01ms !important;
-        }
-
-        .animate-scroll {
-            animation: none;
-        }
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
     }
 
-    /* Performance improvements */
-    .will-change-transform {
-        will-change: transform;
+    .animate-scroll {
+      animation: none;
     }
+  }
 
-    .will-change-opacity {
-        will-change: opacity;
-    }
+  /* Performance improvements */
+  .will-change-transform {
+    will-change: transform;
+  }
 
-    .gpu-accelerated {
-        transform: translateZ(0);
-        backface-visibility: hidden;
-    }
+  .will-change-opacity {
+    will-change: opacity;
+  }
 
-    /* Critical loading states */
-    .loading-skeleton {
-        @apply animate-pulse bg-gray-200 rounded;
-    }
+  .gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
 
-    /* Typography optimizations */
-    .text-balance {
-        text-wrap: balance;
-    }
+  /* Critical loading states */
+  .loading-skeleton {
+    @apply animate-pulse bg-gray-200 rounded;
+  }
 
-    /* Focus states for accessibility */
-    .focus-ring {
-        @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
-    }
+  /* Typography optimizations */
+  .text-balance {
+    text-wrap: balance;
+  }
 
-    .animation-delay-200 {
-        animation-delay: 200ms;
-    }
+  /* Focus states for accessibility */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+  }
 
-    .animation-delay-400 {
-        animation-delay: 400ms;
-    }
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
 
-    .animation-delay-600 {
-        animation-delay: 600ms;
-    }
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
 }
