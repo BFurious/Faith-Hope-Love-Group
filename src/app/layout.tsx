@@ -186,9 +186,9 @@ export default function RootLayout({
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" href="/faith_logo.png" sizes="any" />
+        <link rel="icon" href="/faith_logo.png" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/faith_logo.png" />
         <link rel="manifest" href="/manifest.json" />
         <script
           type="application/ld+json"
