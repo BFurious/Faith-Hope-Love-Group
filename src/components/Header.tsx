@@ -16,7 +16,6 @@ const navigation = [
   { name: "FAQ", href: "/faq" },
   { name: "Glossary", href: "/glossary" },
   { name: "Contact", href: "/contact" },
-  { name: "Social Media Demo", href: "/social-media" },
 ];
 
 export default function Header() {

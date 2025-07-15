@@ -32,7 +32,7 @@ const faqCategories = [
       {
         question: "Can one agency sell multiple types of insurance?",
         answer:
-          "Yes, with proper licensing, an agency can offer various lines such as life, property, casualty, and Obama Care.",
+          "Yes, with proper licensing, an agency can offer various lines such as life, property, casualty, and Obamacare.",
       },
     ],
   },
@@ -124,21 +124,21 @@ const faqCategories = [
     ],
   },
   {
-    title: "Business Insurance",
+    title: "Business (Commercial) Insurance",
     icon: Briefcase,
     questions: [
       {
-        question: "What types of business insurance do you offer?",
+        question: "What types of Business (Commercial) Insurance do you offer?",
         answer:
           "We offer Commercial Property Insurance, General Liability Insurance, Workers' Compensation, Business Auto Insurance, and Professional Liability Insurance.",
       },
       {
-        question: "Is business insurance required by law?",
+        question: "Is Business (Commercial) Insurance required by law?",
         answer:
           "Some types are legally required, such as Workers' Compensation for businesses with employees, while others are recommended for comprehensive protection.",
       },
       {
-        question: "How much business insurance do I need?",
+        question: "How much Business (Commercial) Insurance do I need?",
         answer:
           "The amount depends on your business size, industry, number of employees, and specific risks. Our agents will assess your needs and recommend appropriate coverage.",
       },
@@ -161,7 +161,7 @@ const faqCategories = [
     ],
   },
   {
-    title: "Medicare Insurance",
+    title: "Medicare",
     icon: UserCheck,
     questions: [
       {

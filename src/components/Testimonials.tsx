@@ -134,7 +134,7 @@ const testimonials = [
     role: "Entrepreneur",
     company: "Jackson Consulting",
     content:
-      "Faith Hope Love Group helped me get comprehensive business insurance that protects my company and my family. Their guidance made all the difference.",
+      "Faith Hope Love Group helped me get comprehensive Business (Commercial) Insurance that protects my company and my family. Their guidance made all the difference.",
     rating: 5,
     avatar: "https://i.pravatar.cc/150?img=19",
     verified: true,
@@ -206,8 +206,9 @@ export default function Testimonials() {
           </h2>
 
           <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto px-4 leading-relaxed">
-            <strong>Over 50,000 families</strong> trust us with their most
-            precious assets. Here's why they chose us and never looked back.
+            <strong>Numerous of families & Individuals</strong> trust us with
+            their most precious assets. Here's why they chose us and never
+            looked back.
           </p>
         </motion.div>
 
@@ -523,7 +524,7 @@ export default function Testimonials() {
         >
           <div className="relative z-10 flex flex-col gap-4 justify-between items-center">
             <h3 className="text-3xl md:text-5xl font-black">
-              Join 50,000+ Satisfied Customers
+              Join the List of Satisfied Customers
             </h3>
             <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
               Don't wait to get the protection you deserve.{" "}

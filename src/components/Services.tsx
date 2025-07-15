@@ -101,9 +101,9 @@ const services = [
   },
   {
     icon: Building,
-    title: "Business Insurance",
+    title: "Business (Commercial) Insurance",
     description:
-      "Comprehensive business insurance solutions to protect your company, employees, and assets from various risks and liabilities.",
+      "Comprehensive Business (Commercial) Insurance solutions to protect your company, employees, and assets from various risks and liabilities.",
     features: [
       "Commercial Property Insurance",
       "General Liability Insurance",

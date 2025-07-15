@@ -109,9 +109,9 @@ const detailedServices = [
   },
   {
     icon: Building,
-    title: "Business Insurance",
+    title: "Business (Commercial) Insurance",
     description:
-      "Faith Hope Love Group Agency provides comprehensive business insurance solutions to protect your company, employees, and assets from various risks and liabilities.",
+      "Faith Hope Love Group Agency provides comprehensive Business (Commercial) Insurance solutions to protect your company, employees, and assets from various risks and liabilities.",
     features: [
       "Commercial Property Insurance: Coverage for your business property, equipment, inventory, and buildings against fire, theft, vandalism, and natural disasters.",
       "General Liability Insurance: Protection against third-party claims for bodily injury, property damage, and personal injury that may occur on your business premises.",

@@ -18,9 +18,9 @@ const insuranceTypes = [
   { icon: Shield, label: "Life Insurance" },
   { icon: Heart, label: "Accident & Sickness" },
   { icon: Briefcase, label: "Property & Casualty" },
-  { icon: Briefcase, label: "Business Insurance" },
-  { icon: Plane, label: "Obama Care" },
-  { icon: UserCheck, label: "Medicare Insurance" },
+  { icon: Briefcase, label: "Business (Commercial) Insurance" },
+  { icon: Plane, label: "Obamacare" },
+  { icon: UserCheck, label: "Medicare" },
   { icon: Shield, label: "Notary Services" },
   { icon: Heart, label: "Translation Services" },
 ];
