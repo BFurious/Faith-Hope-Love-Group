@@ -26,11 +26,10 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://hopefaithlovegroup.com"),
+  metadataBase: new URL("https://faholog.com"),
   title: {
-    default:
-      "Hope Faith Love Group - #1 Rated Insurance Protection | Save 40% Today",
-    template: "%s | Hope Faith Love Group Insurance",
+    default: "Faith Hope Love Group - Get Insurance Quote Now | Save 40% Today",
+    template: "%s | Faith Hope Love Group Insurance",
   },
   description:
     "Don't let disaster destroy your life! Get complete insurance protection in 30 seconds.",
@@ -43,13 +42,13 @@ export const metadata: Metadata = {
     "cheap insurance",
     "best insurance rates",
     "insurance quotes",
-    "hope faith love group",
+    "Faith Hope Love group",
     "family protection",
     "insurance coverage",
   ],
-  authors: [{ name: "Hope Faith Love Group" }],
-  creator: "Hope Faith Love Group",
-  publisher: "Hope Faith Love Group",
+  authors: [{ name: "Faith Hope Love Group" }],
+  creator: "Faith Hope Love Group",
+  publisher: "Faith Hope Love Group",
   formatDetection: {
     email: false,
     address: false,
@@ -61,9 +60,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://hopefaithlovegroup.com",
-    siteName: "Hope Faith Love Group",
-    title: "Hope Faith Love Group - #1 Rated Insurance Protection",
+    url: "https://faholog.com",
+    siteName: "Faith Hope Love Group",
+    title: "Faith Hope Love Group - #1 Rated Insurance Protection",
     description:
       "Don't let disaster destroy your life! Get complete insurance protection in 30 seconds.",
     images: [
@@ -71,7 +70,7 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Hope Faith Love Group - Complete Insurance Protection",
+        alt: "Faith Hope Love Group - Complete Insurance Protection",
         type: "image/jpeg",
       },
     ],
@@ -79,9 +78,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    site: "@hopefaithlovegroup",
-    creator: "@hopefaithlovegroup",
-    title: "Hope Faith Love Group - #1 Rated Insurance Protection",
+    site: "@faholog", // Update with your actual Twitter handle
+    creator: "@faholog", // Update with your actual Twitter handle
+    title: "Faith Hope Love Group - #1 Rated Insurance Protection",
     description:
       "Don't let disaster destroy your life! Get complete insurance protection in 30 seconds.",
     images: ["/twitter-image.jpg"],
@@ -102,11 +101,11 @@ export const metadata: Metadata = {
   },
 
   verification: {
-    google: "your-google-verification-code",
+    google: "your-google-verification-code", // Get from Google Search Console
     yandex: "your-yandex-verification-code",
     yahoo: "your-yahoo-verification-code",
     other: {
-      "facebook-domain-verification": "your-facebook-verification-code",
+      "facebook-domain-verification": "your-facebook-verification-code", // Get from Facebook Business Manager
     },
   },
 
@@ -122,21 +121,24 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "InsuranceAgency",
-  name: "Hope Faith Love Group",
-  url: "https://hopefaithlovegroup.com",
-  logo: "https://hopefaithlovegroup.com/logo.png",
+  name: "Faith Hope Love Group",
+  url: "https://faholog.com",
+  logo: "https://faholog.com/faith_logo.png", // Update with your actual logo path
   description:
     "Complete insurance protection for auto, home, life, health, and business.",
   address: {
     "@type": "PostalAddress",
     addressCountry: "US",
+    addressRegion: "Georgia", // Add your state
+    addressLocality: "Georgia", // Add your city
   },
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+1-800-HOPE-FAITH",
+    telephone: "+1-770-882-4899", // Your real phone number
     contactType: "customer service",
     availableLanguage: "English",
     areaServed: "US",
+    email: "care@faholog.com", // Your real email
   },
   aggregateRating: {
     "@type": "AggregateRating",
@@ -151,10 +153,12 @@ const jsonLd = {
     priceValidUntil: "2024-12-31",
     availability: "https://schema.org/InStock",
   },
+  // Only include social media profiles that actually exist
   sameAs: [
-    "https://facebook.com/hopefaithlovegroup",
-    "https://twitter.com/hopefaithlovegroup",
-    "https://linkedin.com/company/hopefaithlovegroup",
+    // "https://facebook.com/faholog", // Uncomment when you have Facebook
+    // "https://twitter.com/faholog", // Uncomment when you have Twitter
+    // "https://linkedin.com/company/faholog", // Uncomment when you have LinkedIn
+    // "https://instagram.com/faholog", // Uncomment when you have Instagram
   ],
 };
 

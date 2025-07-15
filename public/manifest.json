@@ -1,79 +1,75 @@
 {
-    "name": "Hope Faith Love Group - Insurance Services",
-    "short_name": "Hope Faith Love",
-    "description": "Comprehensive insurance services with unmatched protection and customer care. Get instant quotes and secure your future with Hope Faith Love Group.",
-    "start_url": "/",
-    "display": "standalone",
-    "background_color": "#ffffff",
-    "theme_color": "#3b82f6",
-    "orientation": "portrait-primary",
-    "categories": [
-        "finance",
-        "insurance",
-        "business"
-    ],
-    "lang": "en-US",
-    "dir": "ltr",
-    "icons": [
+  "name": "Faith Hope Love Group - Insurance Services",
+  "short_name": "Faith Hope Love Group",
+  "description": "Comprehensive insurance services with unmatched protection and customer care. Get instant quotes and secure your future with Faith Hope Love Group.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "categories": ["finance", "insurance", "business"],
+  "lang": "en-US",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/faith_logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/faith_logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/faith_logo.png",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/screenshot-mobile.png",
+      "sizes": "640x1136",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "shortcuts": [
+    {
+      "name": "Get Quote",
+      "short_name": "Quote",
+      "description": "Get an instant insurance quote",
+      "url": "/#contact",
+      "icons": [
         {
-            "src": "/icon-192.png",
-            "sizes": "192x192",
-            "type": "image/png",
-            "purpose": "maskable any"
-        },
-        {
-            "src": "/icon-512.png",
-            "sizes": "512x512",
-            "type": "image/png",
-            "purpose": "maskable any"
-        },
-        {
-            "src": "/icon.svg",
-            "sizes": "any",
-            "type": "image/svg+xml",
-            "purpose": "any"
+          "src": "/icon-192.png",
+          "sizes": "192x192"
         }
-    ],
-    "screenshots": [
+      ]
+    },
+    {
+      "name": "Contact Us",
+      "short_name": "Contact",
+      "description": "Contact our insurance experts",
+      "url": "/#contact",
+      "icons": [
         {
-            "src": "/screenshot-desktop.png",
-            "sizes": "1280x720",
-            "type": "image/png",
-            "form_factor": "wide"
-        },
-        {
-            "src": "/screenshot-mobile.png",
-            "sizes": "640x1136",
-            "type": "image/png",
-            "form_factor": "narrow"
+          "src": "/icon-192.png",
+          "sizes": "192x192"
         }
-    ],
-    "related_applications": [],
-    "prefer_related_applications": false,
-    "shortcuts": [
-        {
-            "name": "Get Quote",
-            "short_name": "Quote",
-            "description": "Get an instant insurance quote",
-            "url": "/#contact",
-            "icons": [
-                {
-                    "src": "/icon-192.png",
-                    "sizes": "192x192"
-                }
-            ]
-        },
-        {
-            "name": "Contact Us",
-            "short_name": "Contact",
-            "description": "Contact our insurance experts",
-            "url": "/#contact",
-            "icons": [
-                {
-                    "src": "/icon-192.png",
-                    "sizes": "192x192"
-                }
-            ]
-        }
-    ]
+      ]
+    }
+  ]
 }

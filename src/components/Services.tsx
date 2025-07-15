@@ -138,7 +138,7 @@ const benefits = [
   {
     icon: Star,
     title: "Expert Guidance",
-    description: "Licensed professionals with years of experience in insurance",
+    description: "Licensed professionals with great experience in insurance",
   },
   {
     icon: Heart,

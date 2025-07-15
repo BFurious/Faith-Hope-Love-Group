@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { emailService } from "@/lib/emailService";
+import { FooterSocialProfiles } from "./SocialMediaProfiles";
 
 const footerSections = [
   {
@@ -61,12 +62,7 @@ const footerSections = [
   },
 ];
 
-const socialLinks = [
-  { name: "Facebook", icon: Facebook, href: "#" },
-  { name: "Twitter", icon: Twitter, href: "#" },
-  { name: "Instagram", icon: Instagram, href: "#" },
-  { name: "LinkedIn", icon: Linkedin, href: "#" },
-];
+// Social media links are now handled by the SocialMediaProfiles component
 
 export default function Footer() {
   const [newsletterEmail, setNewsletterEmail] = useState("");
@@ -143,7 +139,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <h3 className="text-xl md:text-2xl font-bold gradient-text">
-                    Faith Hope & Love Group
+                    Faith Hope Love Group
                   </h3>
                   <p className="text-gray-400 text-xs md:text-sm">
                     Insurance & Protection
@@ -181,6 +177,11 @@ export default function Footer() {
                     Licensed to serve Georgia residents
                   </span>
                 </div>
+              </div>
+
+              {/* Social Media Profiles */}
+              <div className="mt-6">
+                <FooterSocialProfiles />
               </div>
             </div>
 
@@ -273,7 +274,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 px-4 lg:px-0">
             <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4 text-gray-400 text-xs md:text-sm">
               <div className="flex items-center space-x-1">
-                <span>&copy; 2024 Faith Hope & Love Group.</span>
+                <span>&copy; 2024 Faith Hope Love Group.</span>
                 <span className="hidden sm:inline">All rights reserved.</span>
               </div>
               <div className="flex items-center space-x-4">

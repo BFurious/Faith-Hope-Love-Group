@@ -13,17 +13,18 @@ import {
 } from 'lucide-react'
 
 const values = [
-    {
-        icon: Heart,
-        title: 'Hope',
-        description: 'We believe in a brighter future and help you prepare for it with confidence.',
-        color: 'text-red-500'
-    },
+   
     {
         icon: Shield,
         title: 'Faith',
         description: 'Built on trust and reliability, we stand by our promises and commitments.',
         color: 'text-blue-500'
+    },
+    {
+        icon: Heart,
+        title: 'Hope',
+        description: 'We believe in a brighter future and help you prepare for it with confidence.',
+        color: 'text-red-500'
     },
     {
         icon: Users,
@@ -36,7 +37,7 @@ const values = [
 const achievements = [
     {
         icon: Award,
-        stat: 'Years of Experience',
+        stat: 'Great Experience',
         label: 'Serving Georgia'
     },
     {

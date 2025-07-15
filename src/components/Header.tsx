@@ -16,6 +16,7 @@ const navigation = [
   { name: "FAQ", href: "/faq" },
   { name: "Glossary", href: "/glossary" },
   { name: "Contact", href: "/contact" },
+  { name: "Social Media Demo", href: "/social-media" },
 ];
 
 export default function Header() {
@@ -47,9 +48,7 @@ export default function Header() {
                 <span>care@faholog.com</span>
               </div>
             </div>
-            <div className="text-sm">
-              ASAP Emergency Claims Support
-            </div>
+            <div className="text-sm">ASAP Emergency Claims Support</div>
           </div>
         </div>
       </div>
@@ -85,7 +84,7 @@ export default function Header() {
                 </div>
                 <div>
                   <h1 className="text-2xl font-bold gradient-text">
-                    Faith Hope & Love Group
+                    Faith Hope Love Group
                   </h1>
                   <p className="text-xs text-gray-600 font-medium">
                     Insurance & Protection
