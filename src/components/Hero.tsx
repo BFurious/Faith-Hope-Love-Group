@@ -155,7 +155,7 @@ const CompellingSubheadline = ({
             className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-4 py-3 sm:px-6 sm:py-3.5 rounded-lg sm:rounded-xl font-bold text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 w-full sm:w-auto"
           >
             <span className="flex items-center justify-center space-x-2">
-              <span>Get Protected Now</span>
+              <span>Get Quote Now</span>
               <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 animate-pulse" />
             </span>
           </m.button>

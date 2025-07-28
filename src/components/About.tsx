@@ -126,7 +126,7 @@ export default function About() {
 
                             <p className="text-gray-600 leading-relaxed text-sm md:text-base">
                                 What started as a small local agency has grown into a trusted regional provider,
-                                but we've never lost sight of our core values. Every policy we write, every claim we handle,
+                                but we've never lost sight of our core values. Every policy we write and we handle,
                                 and every relationship we build is guided by hope for the future, faith in our commitments,
                                 and love for our community.
                             </p>

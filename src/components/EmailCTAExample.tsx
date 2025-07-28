@@ -50,7 +50,7 @@ export default function EmailCTAExample() {
     const supportOptions = [
         {
             icon: Headphones,
-            title: "ASAP Emergency Claims Support",
+            title: "ASAP Emergency Support",
             description: "Get immediate assistance with your insurance questions.",
             action: "Contact Support",
             color: "bg-gradient-to-br from-orange-500 to-orange-600",

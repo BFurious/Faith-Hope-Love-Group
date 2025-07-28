@@ -47,7 +47,7 @@ export default function Header() {
                 <span>care@faholog.com</span>
               </div>
             </div>
-            <div className="text-sm">ASAP Emergency Claims Support</div>
+            <div className="text-sm">ASAP Emergency Support</div>
           </div>
         </div>
       </div>
